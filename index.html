@@ -1,24 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Quiz Test</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📘 IC3 GS6 | Vektor test</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="test-container" id="testApp">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h1>📬 IC3 GS6 · vektor test <small>lug‘at</small></h1>
+      </div>
 
-<div class="quiz-container">
-    <div id="quiz-box">
-        <div id="progress"></div>
-        <h2 id="question"></h2>
-        <div id="options"></div>
+      <!-- stat panel -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-label">✅ to‘g‘ri</span
+          ><span class="stat-value" id="correctCount">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">❌ xato</span
+          ><span class="stat-value" id="wrongCount">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">📌 qolgan</span
+          ><span class="stat-value" id="remainingCount">20</span>
+        </div>
+      </div>
+      <div class="progress-indicator">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+      </div>
+
+      <!-- tillar yo‘nalishi -->
+      <div class="direction-toggle" id="directionGroup">
+        <button class="dir-btn" data-dir="en2uz" id="dirEnUz">
+          🇬🇧 ingliz → oʻzbek
+        </button>
+        <button class="dir-btn active" data-dir="uz2en" id="dirUzEn">
+          🇺🇿 oʻzbek → ingliz
+        </button>
+      </div>
+
+      <!-- asosiy test bloki -->
+      <div class="question-box" id="quizBlock">
+        <div class="question-text" id="questionDisplay">
+          Savol yuklanmoqda...
+        </div>
+        <div class="options-grid" id="optionsContainer"></div>
+        <div class="nav-buttons">
+          <button class="nav-btn" id="prevBtn" disabled>◀ oldingi</button>
+          <button class="nav-btn primary" id="nextBtn">keyingi ▶</button>
+        </div>
+      </div>
+
+      <!-- natija paneli + qayta boshlash -->
+      <div class="result-panel" id="resultPanel">
+        <span class="finish-msg" id="resultMessage"
+          >🟢 testni bajarishda davom eting</span
+        >
+        <div style="display: flex; gap: 15px; align-items: center">
+          <span class="score-badge" id="scorePercent">0%</span>
+          <button class="reset-btn" id="resetTest">🔄 yangi test</button>
+        </div>
+      </div>
     </div>
 
-    <button id="nextBtn" disabled>Next</button>
-    <div id="result" class="hidden"></div>
-</div>
-
-<script src="script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
