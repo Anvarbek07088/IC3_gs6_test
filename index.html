@@ -1,76 +1,266 @@
 <!doctype html>
-<html lang="en">
+<html lang="uz">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>📘 IC3 GS6 | Vektor test</title>
-    <link rel="stylesheet" href="./style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>IC3 GS6 Digital Literacy - Mukammal Test Platformasi</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="test-container" id="testApp">
-      <div
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <h1>📬 IC3 GS6 · vektor test <small>lug‘at</small></h1>
-      </div>
+    <div class="app-container">
+      <!-- LOGIN SECTION -->
+      <div id="loginSection" class="login-container">
+        <div class="login-box">
+          <div class="logo">
+            <span class="logo-icon">📘</span>
+            <span class="logo-text">IC3 GS6</span>
+          </div>
+          <h2>Test Platformasiga Kirish</h2>
+          <p class="login-subtitle">Yagona login va parol bilan kiring</p>
 
-      <!-- stat panel -->
-      <div class="stats-bar">
-        <div class="stat-item">
-          <span class="stat-label">✅ to‘g‘ri</span
-          ><span class="stat-value" id="correctCount">0</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">❌ xato</span
-          ><span class="stat-value" id="wrongCount">0</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">📌 qolgan</span
-          ><span class="stat-value" id="remainingCount">20</span>
-        </div>
-      </div>
-      <div class="progress-indicator">
-        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
-      </div>
+          <div class="input-group">
+            <label for="username">Foydalanuvchi nomi</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Foydalanuvchi nomi"
+            
+            />
+          </div>
 
-      <!-- tillar yo‘nalishi -->
-      <div class="direction-toggle" id="directionGroup">
-        <button class="dir-btn" data-dir="en2uz" id="dirEnUz">
-          🇬🇧 ingliz → oʻzbek
-        </button>
-        <button class="dir-btn active" data-dir="uz2en" id="dirUzEn">
-          🇺🇿 oʻzbek → ingliz
-        </button>
-      </div>
+          <div class="input-group">
+            <label for="password">Parol</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Parol"
+            
+            />
+          </div>
 
-      <!-- asosiy test bloki -->
-      <div class="question-box" id="quizBlock">
-        <div class="question-text" id="questionDisplay">
-          Savol yuklanmoqda...
-        </div>
-        <div class="options-grid" id="optionsContainer"></div>
-        <div class="nav-buttons">
-          <button class="nav-btn" id="prevBtn" disabled>◀ oldingi</button>
-          <button class="nav-btn primary" id="nextBtn">keyingi ▶</button>
+          <button id="loginBtn" class="login-btn">▶️ Tizimga kirish</button>
+
+          <div id="loginError" class="login-error"></div>
+
+          <div class="login-info">
+            <p>3 xato urinishdan keyin 30 soniya bloklanadi</p>
+          </div>
         </div>
       </div>
 
-      <!-- natija paneli + qayta boshlash -->
-      <div class="result-panel" id="resultPanel">
-        <span class="finish-msg" id="resultMessage"
-          >🟢 testni bajarishda davom eting</span
-        >
-        <div style="display: flex; gap: 15px; align-items: center">
-          <span class="score-badge" id="scorePercent">0%</span>
-          <button class="reset-btn" id="resetTest">🔄 yangi test</button>
+      <!-- MAIN SECTION (CATEGORIES) -->
+      <div id="mainSection" style="display: none">
+        <div class="header">
+          <div class="header-content">
+            <h1>📘 IC3 GS6 Digital Literacy</h1>
+            <div class="user-info">
+              <span class="user-avatar">👤</span>
+              <span id="loggedUser" class="user-name"></span>
+              <button id="logoutBtn" class="logout-btn" title="Chiqish">
+                🚪
+              </button>
+            </div>
+          </div>
+          <p class="header-subtitle">355+ atama | 6 ta asosiy kategoriya</p>
+        </div>
+
+        <!-- STATISTIKA -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="totalTerms">355</div>
+            <div class="stat-label">Jami atamalar</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="totalCategories">6</div>
+            <div class="stat-label">Kategoriyalar</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="completedTests">0</div>
+            <div class="stat-label">Tugallangan testlar</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="avgScore">0%</div>
+            <div class="stat-label">O'rtacha natija</div>
+          </div>
+        </div>
+
+        <!-- TEST FORMATI -->
+        <div class="format-section">
+          <h3>Test formatini tanlang:</h3>
+          <div class="format-options">
+            <label class="format-option">
+              <input type="radio" name="testFormat" value="mixed" checked />
+              <span>🔄 Aralash (50/50)</span>
+            </label>
+            <label class="format-option">
+              <input type="radio" name="testFormat" value="en2uz" />
+              <span>🇬🇧 Inglizcha → 🇺🇿 O'zbekcha</span>
+            </label>
+            <label class="format-option">
+              <input type="radio" name="testFormat" value="uz2en" />
+              <span>🇺🇿 O'zbekcha → 🇬🇧 Inglizcha</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- KATEGORIYALAR -->
+        <div class="categories-section">
+          <h3>Kategoriyalar:</h3>
+          <div class="categories-grid" id="categoriesContainer"></div>
+        </div>
+      </div>
+
+      <!-- TEST SECTION -->
+      <div id="testSection" style="display: none">
+        <div class="test-header">
+          <button id="backToCategoriesBtn" class="back-btn">
+            ← Bo'limlarga qaytish
+          </button>
+          <h2 id="testCategoryTitle"></h2>
+          <div class="test-progress" id="testProgress">0/10</div>
+        </div>
+
+        <div class="test-container">
+          <!-- CHAP PANEL -->
+          <div class="test-sidebar">
+            <div class="stats-panel">
+              <h4>📊 Test statistikasi</h4>
+              <div class="stat-item">
+                <span>Jami savollar:</span>
+                <span id="totalQuestions">0</span>
+              </div>
+              <div class="stat-item">
+                <span>Javob berilgan:</span>
+                <span id="answeredQuestions">0</span>
+              </div>
+              <div class="stat-item">
+                <span>Qolgan savollar:</span>
+                <span id="remainingQuestions">0</span>
+              </div>
+              <div class="stat-item highlight">
+                <span>✅ To'g'ri:</span>
+                <span id="correctAnswers">0</span>
+              </div>
+              <div class="stat-item">
+                <span>❌ Noto'g'ri:</span>
+                <span id="wrongAnswers">0</span>
+              </div>
+              <div class="stat-item">
+                <span>📊 Foiz:</span>
+                <span id="percentageScore">0%</span>
+              </div>
+            </div>
+
+            <div class="question-nav">
+              <h4>Savollar:</h4>
+              <div class="question-buttons" id="questionNavButtons"></div>
+            </div>
+          </div>
+
+          <!-- O'NG PANEL -->
+          <div class="test-main">
+            <div class="question-type" id="currentQuestionType"></div>
+
+            <div class="question-card">
+              <div class="question-number" id="currentQuestionNumber">
+                Savol 1/10
+              </div>
+              <div class="question-text" id="questionText"></div>
+
+              <div class="options-container" id="optionsContainer"></div>
+            </div>
+
+            <div class="nav-buttons">
+              <button class="nav-btn prev-btn" id="prevQuestionBtn" disabled>
+                ← Oldingi
+              </button>
+              <button class="nav-btn next-btn" id="nextQuestionBtn">
+                Keyingi →
+              </button>
+            </div>
+
+            <div class="action-buttons">
+              <button class="action-btn reset-btn" id="resetTestBtn">
+                🔄 Qayta boshlash
+              </button>
+              <button
+                class="action-btn results-btn"
+                id="showResultsBtn"
+                style="display: none"
+              >
+                📊 Natijalarni ko'rish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS MODAL -->
+      <div id="resultsModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>🎉 Test natijalari</h2>
+            <button class="close-modal" id="closeResultsModal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="result-circle" id="resultCircle">
+              <span id="resultPercentage">0%</span>
+            </div>
+
+            <div class="result-details">
+              <div class="result-row">
+                <span>Jami savollar:</span>
+                <span id="resultTotal">0</span>
+              </div>
+              <div class="result-row">
+                <span>✅ To'g'ri:</span>
+                <span id="resultCorrect">0</span>
+              </div>
+              <div class="result-row">
+                <span>❌ Noto'g'ri:</span>
+                <span id="resultWrong">0</span>
+              </div>
+              <div class="result-row">
+                <span>⚪ Javob berilmagan:</span>
+                <span id="resultUnanswered">0</span>
+              </div>
+              <div class="result-row grade-row">
+                <span>🏆 Baho:</span>
+                <span id="resultGrade">Ajoyib</span>
+              </div>
+            </div>
+
+            <div class="result-message" id="resultMessage"></div>
+
+            <div class="result-actions">
+              <button class="result-btn retry-btn" id="retryTestBtn">
+                🔄 Qayta ishlash
+              </button>
+              <button class="result-btn home-btn" id="goHomeBtn">
+                🏠 Bo'limlarga qaytish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK MODAL -->
+      <div id="blockModal" class="modal">
+        <div class="modal-content block-modal">
+          <div class="modal-header warning">
+            <h3>⛔ Kirish bloklandi</h3>
+          </div>
+          <div class="modal-body">
+            <p>3 marta noto'g'ri parol kiritdingiz.</p>
+            <p>Iltimos, <strong id="blockTimer">30</strong> soniya kuting.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
