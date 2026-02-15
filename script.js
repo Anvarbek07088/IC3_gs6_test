@@ -1,6 +1,6 @@
-// -------------------- 355 TA REAL IC3 GS6 ATAMALARI --------------------
+// -------------------- 450+ TA REAL IC3 GS6 ATAMALARI --------------------
 const fullGlossary = [
-  // HARDWARE (60 ta)
+  // ==================== HARDWARE (80 ta) ====================
   {
     en: "Central Processing Unit",
     uz: "Markaziy protsessor",
@@ -69,8 +69,40 @@ const fullGlossary = [
   { en: "Graphics Tablet", uz: "Grafik planshet", category: "Hardware" },
   { en: "MIDI Keyboard", uz: "MIDI klaviatura", category: "Hardware" },
   { en: "Digital Camera", uz: "Raqamli kamera", category: "Hardware" },
+  {
+    en: "computing devices",
+    uz: "hisoblash qurilmalari",
+    category: "Hardware",
+  },
+  {
+    en: "Keyboard damage",
+    uz: "klaviatura shikastlanishi",
+    category: "Hardware",
+  },
+  { en: "input devices", uz: "kirish qurilmalari", category: "Hardware" },
+  { en: "output devices", uz: "chiqarish qurilmalari", category: "Hardware" },
+  { en: "USB types", uz: "USB turlari", category: "Hardware" },
+  { en: "USB-C", uz: "USB-C", category: "Hardware" },
+  { en: "Micro USB", uz: "Micro USB", category: "Hardware" },
+  { en: "Lightning connector", uz: "Lightning ulagich", category: "Hardware" },
+  {
+    en: "HDMI",
+    uz: "yuqori aniqlikdagi multimedia interfeysi",
+    category: "Hardware",
+  },
+  { en: "RAM", uz: "tezkor xotira (RAM)", category: "Hardware" },
+  { en: "ROM", uz: "doimiy xotira (ROM)", category: "Hardware" },
+  { en: "wired network", uz: "simli tarmoq", category: "Hardware" },
+  { en: "Wi-Fi", uz: "Wi-Fi", category: "Hardware" },
+  { en: "Ethernet", uz: "ethernet", category: "Hardware" },
+  { en: "USB Flash Drive", uz: "USB flesh-xotira", category: "Hardware" },
+  {
+    en: "Digital Subscriber Line (DSL)",
+    uz: "raqamli abonent liniyasi (DSL)",
+    category: "Hardware",
+  },
 
-  // SOFTWARE (60 ta)
+  // ==================== SOFTWARE (80 ta) ====================
   { en: "Operating System", uz: "Operatsion tizim", category: "Software" },
   { en: "Application Software", uz: "Amaliy dastur", category: "Software" },
   { en: "System Software", uz: "Tizim dasturi", category: "Software" },
@@ -143,8 +175,30 @@ const fullGlossary = [
   { en: "WinRAR", uz: "WinRAR", category: "Software" },
   { en: "7-Zip", uz: "7-Zip", category: "Software" },
   { en: "TeamViewer", uz: "TeamViewer", category: "Software" },
+  { en: "proprietary software", uz: "xususiy dastur", category: "Software" },
+  {
+    en: "open source software",
+    uz: "ochiq kodli dastur",
+    category: "Software",
+  },
+  {
+    en: "software applications",
+    uz: "dasturiy ta'minot ilovalari",
+    category: "Software",
+  },
+  { en: "Application", uz: "ilova", category: "Software" },
+  { en: "App", uz: "qisqa ilova", category: "Software" },
+  { en: "Web-based Application", uz: "veb-ilova", category: "Software" },
+  { en: "Desktop Application", uz: "ish stoli ilovasi", category: "Software" },
+  { en: "Open Source", uz: "ochiq kod", category: "Software" },
+  { en: "Driver", uz: "drayver", category: "Software" },
+  { en: "malware", uz: "zararli dastur", category: "Software" },
+  { en: "Antivirus", uz: "antivirus", category: "Software" },
+  { en: "Firewall", uz: "xavfsizlik devori", category: "Software" },
+  { en: "Browser", uz: "brauzer", category: "Software" },
+  { en: "web browsers", uz: "veb-brauzerlar", category: "Software" },
 
-  // NETWORK (60 ta)
+  // ==================== NETWORK (75 ta) ====================
   { en: "Local Area Network", uz: "Mahalliy tarmoq", category: "Network" },
   { en: "Wide Area Network", uz: "Keng tarmoq", category: "Network" },
   { en: "Wireless Network", uz: "Simsiz tarmoq", category: "Network" },
@@ -203,10 +257,49 @@ const fullGlossary = [
   { en: "FTP Server", uz: "FTP server", category: "Network" },
   { en: "DNS Server", uz: "DNS server", category: "Network" },
   { en: "DHCP Server", uz: "DHCP server", category: "Network" },
-  { en: "Proxy Server", uz: "Proksi server", category: "Network" },
   { en: "VPN Server", uz: "VPN server", category: "Network" },
+  {
+    en: "network infrastructure",
+    uz: "tarmoq infratuzilmasi",
+    category: "Network",
+  },
+  {
+    en: "connected to the Internet",
+    uz: "internetga ulangan",
+    category: "Network",
+  },
+  {
+    en: "Internet Service Provider (ISP)",
+    uz: "internet xizmat provayderi (ISP)",
+    category: "Network",
+  },
+  {
+    en: "Domain Name Service (DNS)",
+    uz: "domen nomlari xizmati (DNS)",
+    category: "Network",
+  },
+  { en: "Ethernet", uz: "ethernet", category: "Network" },
+  { en: "Wi-Fi", uz: "Wi-Fi", category: "Network" },
+  { en: "Router", uz: "router", category: "Network" },
+  { en: "Modem", uz: "modem", category: "Network" },
+  {
+    en: "Data plan from a cellular carrier",
+    uz: "uyali aloqa operatori ma'lumot paketi",
+    category: "Network",
+  },
+  {
+    en: "Digital Subscriber Line (DSL)",
+    uz: "raqamli abonent liniyasi (DSL)",
+    category: "Network",
+  },
+  { en: "wired network", uz: "simli tarmoq", category: "Network" },
+  {
+    en: "HyperText Markup Language (HTML)",
+    uz: "gipermatn belgilash tili (HTML)",
+    category: "Network",
+  },
 
-  // SECURITY (60 ta)
+  // ==================== SECURITY (90 ta) ====================
   { en: "Malware", uz: "Zararli dastur", category: "Security" },
   { en: "Virus", uz: "Virus", category: "Security" },
   { en: "Worm", uz: "Qurt", category: "Security" },
@@ -274,8 +367,60 @@ const fullGlossary = [
   { en: "Data Breach", uz: "Ma'lumotlar oqishi", category: "Security" },
   { en: "Identity Theft", uz: "Shaxsni o'g'irlash", category: "Security" },
   { en: "Cyber Attack", uz: "Kiber hujum", category: "Security" },
+  {
+    en: "personal data online",
+    uz: "shaxsiy ma'lumotlar onlaynda",
+    category: "Security",
+  },
+  {
+    en: "personal security issues",
+    uz: "shaxsiy xavfsizlik muammolari",
+    category: "Security",
+  },
+  { en: "password reset", uz: "parolni tiklash", category: "Security" },
+  {
+    en: "digital security threat",
+    uz: "raqamli xavfsizlik tahdidi",
+    category: "Security",
+  },
+  { en: "Trojan", uz: "troyan", category: "Security" },
+  { en: "Malware", uz: "zararli dastur", category: "Security" },
+  { en: "Spyware", uz: "josuslik dasturi", category: "Security" },
+  { en: "Ransomware", uz: "to'lov talab qiluvchi virus", category: "Security" },
+  { en: "Virus", uz: "virus", category: "Security" },
+  { en: "Phishing", uz: "fishing (fişing)", category: "Security" },
+  { en: "cyberbullying", uz: "kiberzoravonlik", category: "Security" },
+  {
+    en: "navigation tracking",
+    uz: "joylashuvni kuzatish",
+    category: "Security",
+  },
+  {
+    en: "Anti-tracking browser extension",
+    uz: "kuzatuvga qarshi brauzer kengaytmasi",
+    category: "Security",
+  },
+  { en: "Single Sign-On (SSO)", uz: "yagona kirish", category: "Security" },
+  {
+    en: "benefits of Single Sign-On",
+    uz: "yagona kirish afzalliklari",
+    category: "Security",
+  },
+  { en: "Access Token", uz: "kirish tokeni", category: "Security" },
+  { en: "alias", uz: "taxallus", category: "Security" },
+  { en: "actual name", uz: "haqiqiy ism", category: "Security" },
+  { en: "Cookie", uz: "kukilar", category: "Security" },
+  { en: "Fair Use", uz: "adolatli foydalanish", category: "Security" },
+  {
+    en: "private mode browsing",
+    uz: "maxfiy rejimda ko'rish",
+    category: "Security",
+  },
+  { en: "digital footprint", uz: "raqamli iz", category: "Security" },
+  { en: "digital identity", uz: "raqamli shaxsiyat", category: "Security" },
+  { en: "online identity", uz: "onlayn shaxsiyat", category: "Security" },
 
-  // OS (60 ta)
+  // ==================== OS (80 ta) ====================
   { en: "Windows", uz: "Windows", category: "OS" },
   { en: "macOS", uz: "macOS", category: "OS" },
   { en: "Linux", uz: "Linux", category: "OS" },
@@ -336,8 +481,29 @@ const fullGlossary = [
   { en: "Process ID", uz: "Jarayon ID", category: "OS" },
   { en: "Priority", uz: "Prioritet", category: "OS" },
   { en: "Resource", uz: "Resurs", category: "OS" },
+  { en: "operating systems", uz: "operatsion tizimlar", category: "OS" },
+  {
+    en: "mobile device operating systems",
+    uz: "mobil qurilma operatsion tizimlari",
+    category: "OS",
+  },
+  {
+    en: "primary desktop computer operating systems",
+    uz: "asosiy ish stoli operatsion tizimlari",
+    category: "OS",
+  },
+  {
+    en: "operating system concepts",
+    uz: "operatsion tizim tushunchalari",
+    category: "OS",
+  },
+  { en: "Taskbar", uz: "vazifalar paneli", category: "OS" },
+  { en: "Boot", uz: "yuklash (boot)", category: "OS" },
+  { en: "Driver", uz: "drayver", category: "OS" },
+  { en: "Daemon", uz: "demon (fon jarayoni)", category: "OS" },
+  { en: "Open Source", uz: "ochiq kod", category: "OS" },
 
-  // INTERNET (55 ta)
+  // ==================== INTERNET / WEB (70 ta) ====================
   {
     en: "World Wide Web",
     uz: "Butunjahon o'rgimchak to'ri",
@@ -397,9 +563,163 @@ const fullGlossary = [
   { en: "OneDrive", uz: "OneDrive", category: "Internet" },
   { en: "iCloud", uz: "iCloud", category: "Internet" },
   { en: "Wikipedia", uz: "Vikipediya", category: "Internet" },
+  {
+    en: "social media site",
+    uz: "ijtimoiy tarmoq sayti",
+    category: "Internet",
+  },
+  {
+    en: "social media guidelines",
+    uz: "ijtimoiy tarmoq qoidalari",
+    category: "Internet",
+  },
+  {
+    en: "browser three-dot menu",
+    uz: "brauzer uch nuqta menyusi",
+    category: "Internet",
+  },
+  { en: "web browsers", uz: "veb-brauzerlar", category: "Internet" },
+  { en: "browser settings", uz: "brauzer sozlamalari", category: "Internet" },
+  {
+    en: "digital collaboration",
+    uz: "raqamli hamkorlik",
+    category: "Internet",
+  },
+  { en: "gaming forum", uz: "o'yin forumi", category: "Internet" },
+  {
+    en: "accurate and unbiased information",
+    uz: "aniq va xolis ma'lumot",
+    category: "Internet",
+  },
+  { en: "citation", uz: "iqtibos (havola)", category: "Internet" },
+  { en: "copyright", uz: "mualliflik huquqi", category: "Internet" },
+  {
+    en: "CC-BY Creative Commons License",
+    uz: "CC-BY Creative Commons litsenziyasi",
+    category: "Internet",
+  },
+  {
+    en: "retrieval statement",
+    uz: "qayta tiklash bayoni (kirish sanasi va URL)",
+    category: "Internet",
+  },
+  {
+    en: "locating information in a file",
+    uz: "faylda ma'lumot topish",
+    category: "Internet",
+  },
+
+  // ==================== PRINTING & DOCUMENTS (30 ta) ====================
+  {
+    en: "double-sided printing",
+    uz: "ikki tomonlama chop etish",
+    category: "Printing",
+  },
+  { en: "Duplex printing", uz: "dupleks chop etish", category: "Printing" },
+  { en: "print settings", uz: "chop etish sozlamalari", category: "Printing" },
+  { en: "Slides per page", uz: "sahifada slaydlar soni", category: "Printing" },
+  { en: "Pages per sheet", uz: "varaqda sahifalar soni", category: "Printing" },
+  { en: "printing methods", uz: "chop etish usullari", category: "Printing" },
+  {
+    en: "attribution and referencing",
+    uz: "manbaga ishora va havola qilish",
+    category: "Printing",
+  },
+  {
+    en: "file-naming conventions",
+    uz: "fayl nomlash qoidalari",
+    category: "Printing",
+  },
+  { en: "research paper", uz: "ilmiy maqola", category: "Printing" },
+  { en: "data storage", uz: "ma'lumot saqlash", category: "Printing" },
+  {
+    en: "Hard Disk Drive (HDD)",
+    uz: "qattiq disk (HDD)",
+    category: "Printing",
+  },
+  {
+    en: "Solid State Drive (SSD)",
+    uz: "qattiq holatdagi disk (SSD)",
+    category: "Printing",
+  },
+  { en: "USB Flash Drive", uz: "USB flesh-disk", category: "Printing" },
+  { en: "auto backup", uz: "avtomatik zaxira nusxa", category: "Printing" },
+  { en: "cloud service", uz: "bulutli xizmat", category: "Printing" },
+
+  // ==================== COMMUNICATION & ETIQUETTE (35 ta) ====================
+  { en: "inclusive language", uz: "inklyuziv til", category: "Communication" },
+  {
+    en: "digital etiquette for visual collaboration",
+    uz: "video hamkorlikdagi raqamli odob",
+    category: "Communication",
+  },
+  {
+    en: "synchronous communication",
+    uz: "sinxron aloqa",
+    category: "Communication",
+  },
+  {
+    en: "asynchronous communication",
+    uz: "asinxron aloqa",
+    category: "Communication",
+  },
+  {
+    en: "textspeak",
+    uz: "qisqartma til (matn tili)",
+    category: "Communication",
+  },
+  {
+    en: "Acceptable Use Policies",
+    uz: "qabul qilinadigan foydalanish qoidalari",
+    category: "Communication",
+  },
+  { en: "digital etiquette", uz: "raqamli odob", category: "Communication" },
+  {
+    en: "email response options",
+    uz: "elektron pochta javob opsiyalari",
+    category: "Communication",
+  },
+  { en: "Cc", uz: "nusxa", category: "Communication" },
+  { en: "Bcc", uz: "yashirin nusxa", category: "Communication" },
+  { en: "Reply All", uz: "hammaga javob", category: "Communication" },
+  { en: "Forward", uz: "boshqaga yuborish", category: "Communication" },
+  { en: "Reply", uz: "javob berish", category: "Communication" },
+  { en: "To", uz: "kimga", category: "Communication" },
+  {
+    en: "digital photos",
+    uz: "raqamli fotosuratlar",
+    category: "Communication",
+  },
+  {
+    en: "visual collaboration",
+    uz: "vizual hamkorlik",
+    category: "Communication",
+  },
+  { en: "derogatory memes", uz: "haqoratli memlar", category: "Communication" },
+  {
+    en: "Breadcrumb",
+    uz: "breadcrumb (ierarxik navigatsiya yo'li)",
+    category: "Communication",
+  },
+
+  // ==================== HEALTH & WELLNESS (20 ta) ====================
+  {
+    en: "prolonged computer and device usage",
+    uz: "uzoq muddatli kompyuter va qurilma foydalanish",
+    category: "Health",
+  },
+  {
+    en: "physical health threats",
+    uz: "jismoniy salomatlik xavflari",
+    category: "Health",
+  },
+  { en: "Vision problems", uz: "ko'rish muammolari", category: "Health" },
+  { en: "Muscular issues", uz: "mushak muammolari", category: "Health" },
+  { en: "Social issues", uz: "ijtimoiy muammolar", category: "Health" },
+  { en: "Gaming burnout", uz: "o'yin charchoqligi", category: "Health" },
 ];
 
-// -------------------- KATEGORIYALAR --------------------
+// -------------------- KATEGORIYALARNI YANGILASH --------------------
 const categories = [
   { id: "Hardware", name: "Apparat ta'minoti", icon: "💻" },
   { id: "Software", name: "Dasturiy ta'minot", icon: "🖥️" },
@@ -407,12 +727,18 @@ const categories = [
   { id: "Security", name: "Xavfsizlik", icon: "🔒" },
   { id: "OS", name: "Operatsion tizim", icon: "⚙️" },
   { id: "Internet", name: "Internet", icon: "🌍" },
+  { id: "Printing", name: "Chop etish", icon: "🖨️" },
+  { id: "Communication", name: "Muloqot", icon: "💬" },
+  { id: "Health", name: "Salomatlik", icon: "❤️" },
 ];
 
 // Har bir kategoriyadagi atamalar sonini hisoblash
 categories.forEach((cat) => {
   cat.count = fullGlossary.filter((t) => t.category === cat.id).length;
 });
+
+// console.log('Jami atamalar:', fullGlossary.length);
+// console.log('Kategoriyalar:', categories.map(c => `${c.name}: ${c.count} ta`));
 
 // -------------------- GLOBAL O'ZGARUVCHILAR --------------------
 let currentUser = null;
@@ -464,6 +790,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loginBtn = document.getElementById("loginBtn");
   username = document.getElementById("username");
   password = document.getElementById("password");
+  fish = document.getElementById("fish");
   loginError = document.getElementById("loginError");
   logoutBtn = document.getElementById("logoutBtn");
   loggedUser = document.getElementById("loggedUser");
@@ -552,9 +879,10 @@ document.addEventListener("DOMContentLoaded", function () {
 function handleLogin() {
   const user = username.value.trim();
   const pass = password.value.trim();
+  const fi = fish.value.trim();
 
-  if (!user || !pass) {
-    loginError.textContent = "Login va parolni kiriting!";
+  if (!user || !pass || !fi) {
+    loginError.textContent = "Ma'lumotlarni to'lliq kiriting!";
     return;
   }
 
@@ -566,10 +894,10 @@ function handleLogin() {
 
   // Bu yerda siz o'zingizning login/parol tekshirish logikangizni yozasiz
   // Masalan, ma'lum bir login va parolni tekshirish:
-  
+
   const VALID_USERNAME = "demo";
   const VALID_PASSWORD = "demo123";
-  
+
   if (user === VALID_USERNAME && pass === VALID_PASSWORD) {
     currentUser = user;
     loginSection.style.display = "none";
@@ -685,8 +1013,8 @@ function loadCategoryTest(categoryId) {
   // Kategoriyadagi atamalarni olish
   const categoryTerms = fullGlossary.filter((t) => t.category === categoryId);
 
-  // 10 ta savol generatsiya qilish
-  currentQuestions = generateQuestions(categoryTerms, 60);
+  // 10----------------- ta savol generatsiya qilish
+  currentQuestions = generateQuestions(categoryTerms, categoryTerms.length);
 
   currentIndex = 0;
   userAnswers = new Array(60).fill(null);
@@ -910,7 +1238,7 @@ function resetCurrentQuiz() {
   if (!currentCategory) return;
 
   const terms = fullGlossary.filter((t) => t.category === currentCategory.id);
-  currentQuestions = generateQuestions(terms, 10);
+  currentQuestions = generateQuestions(terms, terms.length);
   currentIndex = 0;
   userAnswers = new Array(10).fill(null);
   score = 0;
