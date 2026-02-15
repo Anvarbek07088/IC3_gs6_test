@@ -1007,7 +1007,7 @@ function renderCategories() {
       categoryContainer.appendChild(card);
     } else {
       const card = document.createElement("div");
-      card.className = "category-card";
+      card.className = "category-card1";
       card.innerHTML = `
             <div class="category-icon">${cat.icon}</div>
             <span class="category-name">${cat.name}</span>
