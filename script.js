@@ -1,745 +1,743 @@
 // -------------------- 450+ TA REAL IC3 GS6 ATAMALARI --------------------
-const fullGlossary = [
-  // ==================== HARDWARE (80 ta) ====================
-  {
-    en: "Central Processing Unit",
-    uz: "Markaziy protsessor",
-    category: "Hardware",
-  },
-  { en: "Random Access Memory", uz: "Tezkor xotira", category: "Hardware" },
-  { en: "Hard Disk Drive", uz: "Qattiq disk", category: "Hardware" },
-  { en: "Solid State Drive", uz: "Tezkor xotirali disk", category: "Hardware" },
-  { en: "Motherboard", uz: "Ona plata", category: "Hardware" },
-  { en: "Power Supply Unit", uz: "Elektr manbai", category: "Hardware" },
-  { en: "Graphics Card", uz: "Video karta", category: "Hardware" },
-  { en: "Sound Card", uz: "Ovoz kartasi", category: "Hardware" },
-  { en: "Network Interface Card", uz: "Tarmoq kartasi", category: "Hardware" },
-  { en: "USB Flash Drive", uz: "Fleshka", category: "Hardware" },
-  { en: "External Hard Drive", uz: "Tashqi qattiq disk", category: "Hardware" },
-  { en: "Keyboard", uz: "Klaviatura", category: "Hardware" },
-  { en: "Mouse", uz: "Sichqoncha", category: "Hardware" },
-  { en: "Monitor", uz: "Monitor", category: "Hardware" },
-  { en: "Printer", uz: "Printer", category: "Hardware" },
-  { en: "Scanner", uz: "Skaner", category: "Hardware" },
-  { en: "Speaker", uz: "Dinamik", category: "Hardware" },
-  { en: "Microphone", uz: "Mikrofon", category: "Hardware" },
-  { en: "Webcam", uz: "Veb-kamera", category: "Hardware" },
-  { en: "Projector", uz: "Proyektor", category: "Hardware" },
-  { en: "Router", uz: "Router", category: "Hardware" },
-  { en: "Modem", uz: "Modem", category: "Hardware" },
-  { en: "Switch", uz: "Switch", category: "Hardware" },
-  { en: "Access Point", uz: "Kirish nuqtasi", category: "Hardware" },
-  { en: "Ethernet Cable", uz: "Ethernet kabel", category: "Hardware" },
-  { en: "USB Cable", uz: "USB kabel", category: "Hardware" },
-  { en: "HDMI Cable", uz: "HDMI kabel", category: "Hardware" },
-  { en: "VGA Cable", uz: "VGA kabel", category: "Hardware" },
-  { en: "DisplayPort", uz: "DisplayPort", category: "Hardware" },
-  { en: "Thunderbolt", uz: "Thunderbolt", category: "Hardware" },
-  { en: "Bluetooth Adapter", uz: "Bluetooth adapter", category: "Hardware" },
-  { en: "Wi-Fi Adapter", uz: "Wi-Fi adapter", category: "Hardware" },
-  { en: "Touch Screen", uz: "Sensorli ekran", category: "Hardware" },
-  { en: "Stylus", uz: "Stilus", category: "Hardware" },
-  { en: "Trackpad", uz: "Sensorli panel", category: "Hardware" },
-  { en: "Cooling Fan", uz: "Sovutish ventilyatori", category: "Hardware" },
-  { en: "Heat Sink", uz: "Issiqlik sochgich", category: "Hardware" },
-  { en: "BIOS", uz: "BIOS", category: "Hardware" },
-  { en: "CMOS Battery", uz: "CMOS batareyasi", category: "Hardware" },
-  { en: "Expansion Slot", uz: "Kengaytirish uyasi", category: "Hardware" },
-  { en: "PCI Express", uz: "PCI Express", category: "Hardware" },
-  { en: "SATA Port", uz: "SATA port", category: "Hardware" },
-  { en: "Power Button", uz: "Quvvat tugmasi", category: "Hardware" },
-  { en: "Reset Button", uz: "Qayta yuklash tugmasi", category: "Hardware" },
-  { en: "LED Indicator", uz: "LED ko'rsatkichi", category: "Hardware" },
-  { en: "Cooling Pad", uz: "Sovutish paneli", category: "Hardware" },
-  { en: "Docking Station", uz: "Dok stansiyasi", category: "Hardware" },
-  { en: "KVM Switch", uz: "KVM switch", category: "Hardware" },
-  { en: "Barcode Reader", uz: "Shtrix kod o'quvchi", category: "Hardware" },
-  {
-    en: "Magnetic Stripe Reader",
-    uz: "Magnit lenta o'quvchi",
-    category: "Hardware",
-  },
-  { en: "Smart Card Reader", uz: "Smart karta o'quvchi", category: "Hardware" },
-  { en: "Biometric Scanner", uz: "Biometrik skaner", category: "Hardware" },
-  { en: "Fingerprint Reader", uz: "Barmoq izi o'quvchi", category: "Hardware" },
-  { en: "Iris Scanner", uz: "Ko'z skaneri", category: "Hardware" },
-  { en: "Game Controller", uz: "O'yin kontrolleri", category: "Hardware" },
-  { en: "Joystick", uz: "Joystik", category: "Hardware" },
-  { en: "VR Headset", uz: "VR ko'zoynak", category: "Hardware" },
-  { en: "Graphics Tablet", uz: "Grafik planshet", category: "Hardware" },
-  { en: "MIDI Keyboard", uz: "MIDI klaviatura", category: "Hardware" },
-  { en: "Digital Camera", uz: "Raqamli kamera", category: "Hardware" },
-  {
-    en: "computing devices",
-    uz: "hisoblash qurilmalari",
-    category: "Hardware",
-  },
-  {
-    en: "Keyboard damage",
-    uz: "klaviatura shikastlanishi",
-    category: "Hardware",
-  },
-  { en: "input devices", uz: "kirish qurilmalari", category: "Hardware" },
-  { en: "output devices", uz: "chiqarish qurilmalari", category: "Hardware" },
-  { en: "USB types", uz: "USB turlari", category: "Hardware" },
-  { en: "USB-C", uz: "USB-C", category: "Hardware" },
-  { en: "Micro USB", uz: "Micro USB", category: "Hardware" },
-  { en: "Lightning connector", uz: "Lightning ulagich", category: "Hardware" },
-  {
-    en: "HDMI",
-    uz: "yuqori aniqlikdagi multimedia interfeysi",
-    category: "Hardware",
-  },
-  { en: "RAM", uz: "tezkor xotira (RAM)", category: "Hardware" },
-  { en: "ROM", uz: "doimiy xotira (ROM)", category: "Hardware" },
-  { en: "wired network", uz: "simli tarmoq", category: "Hardware" },
-  { en: "Wi-Fi", uz: "Wi-Fi", category: "Hardware" },
-  { en: "Ethernet", uz: "ethernet", category: "Hardware" },
-  { en: "USB Flash Drive", uz: "USB flesh-xotira", category: "Hardware" },
-  {
-    en: "Digital Subscriber Line (DSL)",
-    uz: "raqamli abonent liniyasi (DSL)",
-    category: "Hardware",
-  },
+const  fullGlossary = [
+  // ==================== ASOSIY ATAMALAR ====================
+  { en: "antivirus software", uz: "antivirus dastur", category: "IC3 Security" },
+  { en: "backup", uz: "zaxira nusxa", category: "IC3 Security" },
+  { en: "cloud storage", uz: "bulutli xotira", category: "IC3 Internet" },
+  { en: "external hard drive", uz: "tashqi qattiq disk", category: "IC3 Hardware" },
+  { en: "password", uz: "parol", category: "IC3 Security" },
+  { en: "phishing", uz: "fishing (fişing)", category: "IC3 Security" },
+  { en: "spyware", uz: "josuslik dasturi", category: "IC3 Security" },
+  { en: "trojan", uz: "troyan", category: "IC3 Security" },
+  { en: "virus", uz: "virus", category: "IC3 Security" },
+  { en: "worm", uz: "qurt", category: "IC3 Security" },
+  { en: "ransomware", uz: "to‘lov talab qiluvchi virus", category: "IC3 Security" },
+  { en: "malware", uz: "zararli dastur", category: "IC3 Security" },
+  { en: "firewall", uz: "xavfsizlik devori", category: "IC3 Security" },
+  { en: "encryption", uz: "shifrlash", category: "IC3 Security" },
+  { en: "decryption", uz: "shifrni ochish", category: "IC3 Security" },
+  { en: "public key", uz: "ochiq kalit", category: "IC3 Security" },
+  { en: "private key", uz: "maxfiy kalit", category: "IC3 Security" },
+  { en: "digital signature", uz: "raqamli imzo", category: "IC3 Security" },
+  { en: "digital certificate", uz: "raqamli sertifikat", category: "IC3 Security" },
+  { en: "two-factor authentication", uz: "ikki bosqichli autentifikatsiya", category: "IC3 Security" },
+  { en: "multi-factor authentication", uz: "ko‘p bosqichli autentifikatsiya", category: "IC3 Security" },
+  { en: "biometrics", uz: "biometrik", category: "IC3 Security" },
+  { en: "password manager", uz: "parol boshqaruvchi", category: "IC3 Security" },
+  { en: "strong password", uz: "kuchli parol", category: "IC3 Security" },
+  { en: "weak password", uz: "zaif parol", category: "IC3 Security" },
 
-  // ==================== SOFTWARE (80 ta) ====================
-  { en: "Operating System", uz: "Operatsion tizim", category: "Software" },
-  { en: "Application Software", uz: "Amaliy dastur", category: "Software" },
-  { en: "System Software", uz: "Tizim dasturi", category: "Software" },
-  { en: "Driver", uz: "Drayver", category: "Software" },
-  { en: "Firmware", uz: "Mikrodastur", category: "Software" },
-  { en: "Word Processor", uz: "Matn muharriri", category: "Software" },
-  { en: "Spreadsheet", uz: "Jadval muharriri", category: "Software" },
-  { en: "Presentation Software", uz: "Taqdimot dasturi", category: "Software" },
-  { en: "Database Software", uz: "Ma'lumotlar bazasi", category: "Software" },
-  { en: "Web Browser", uz: "Veb brauzer", category: "Software" },
-  { en: "Email Client", uz: "Email dasturi", category: "Software" },
-  { en: "Media Player", uz: "Media pleer", category: "Software" },
-  { en: "Graphics Software", uz: "Grafik dastur", category: "Software" },
-  { en: "Video Editor", uz: "Video muharrir", category: "Software" },
-  { en: "Audio Editor", uz: "Audio muharrir", category: "Software" },
-  { en: "Antivirus", uz: "Antivirus", category: "Software" },
-  { en: "Firewall", uz: "Xavfsizlik devori", category: "Software" },
-  { en: "Compression Tool", uz: "Siqish dasturi", category: "Software" },
-  { en: "PDF Reader", uz: "PDF o'quvchi", category: "Software" },
-  { en: "Cloud Storage", uz: "Bulutli xotira", category: "Software" },
-  { en: "Virtual Machine", uz: "Virtual mashina", category: "Software" },
-  { en: "Emulator", uz: "Emulyator", category: "Software" },
-  { en: "Compiler", uz: "Kompilyator", category: "Software" },
-  { en: "Interpreter", uz: "Interpretator", category: "Software" },
-  { en: "IDE", uz: "Integratsiyalangan muhit", category: "Software" },
-  { en: "Version Control", uz: "Versiya nazorati", category: "Software" },
-  {
-    en: "Database Management",
-    uz: "Ma'lumotlar bazasi boshqaruvi",
-    category: "Software",
-  },
-  { en: "CRM Software", uz: "CRM dasturi", category: "Software" },
-  { en: "ERP Software", uz: "ERP dasturi", category: "Software" },
-  {
-    en: "Accounting Software",
-    uz: "Buxgalteriya dasturi",
-    category: "Software",
-  },
-  { en: "Project Management", uz: "Loyiha boshqaruvi", category: "Software" },
-  { en: "Time Tracking", uz: "Vaqt kuzatuvi", category: "Software" },
-  { en: "Screen Recorder", uz: "Ekran yozuvchi", category: "Software" },
-  { en: "Screenshot Tool", uz: "Ekran tasvirchi", category: "Software" },
-  { en: "Remote Desktop", uz: "Masofaviy ish stoli", category: "Software" },
-  { en: "VPN Client", uz: "VPN mijoz", category: "Software" },
-  { en: "Backup Software", uz: "Zaxira dasturi", category: "Software" },
-  {
-    en: "Recovery Software",
-    uz: "Qayta tiklash dasturi",
-    category: "Software",
-  },
-  { en: "Disk Cleanup", uz: "Disk tozalash", category: "Software" },
-  { en: "Disk Defragmenter", uz: "Disk defragmentatori", category: "Software" },
-  { en: "Task Manager", uz: "Vazifa menejeri", category: "Software" },
-  { en: "Registry Editor", uz: "Registr muharriri", category: "Software" },
-  { en: "Command Prompt", uz: "Buyruq satri", category: "Software" },
-  { en: "PowerShell", uz: "PowerShell", category: "Software" },
-  { en: "Text Editor", uz: "Matn muharriri", category: "Software" },
-  { en: "Notepad", uz: "Bloknot", category: "Software" },
-  { en: "Calculator", uz: "Kalkulyator", category: "Software" },
-  { en: "Calendar App", uz: "Taqvim", category: "Software" },
-  { en: "Contacts App", uz: "Kontaktlar", category: "Software" },
-  { en: "Maps App", uz: "Xaritalar", category: "Software" },
-  { en: "Weather App", uz: "Ob-havo", category: "Software" },
-  { en: "News App", uz: "Yangiliklar", category: "Software" },
-  { en: "Social Media App", uz: "Ijtimoiy tarmoq", category: "Software" },
-  { en: "Messaging App", uz: "Xabar almashish", category: "Software" },
-  { en: "Video Call App", uz: "Video qo'ng'iroq", category: "Software" },
-  { en: "Office Suite", uz: "Ofis to'plami", category: "Software" },
-  { en: "Adobe Reader", uz: "Adobe Reader", category: "Software" },
-  { en: "WinRAR", uz: "WinRAR", category: "Software" },
-  { en: "7-Zip", uz: "7-Zip", category: "Software" },
-  { en: "TeamViewer", uz: "TeamViewer", category: "Software" },
-  { en: "proprietary software", uz: "xususiy dastur", category: "Software" },
-  {
-    en: "open source software",
-    uz: "ochiq kodli dastur",
-    category: "Software",
-  },
-  {
-    en: "software applications",
-    uz: "dasturiy ta'minot ilovalari",
-    category: "Software",
-  },
-  { en: "Application", uz: "ilova", category: "Software" },
-  { en: "App", uz: "qisqa ilova", category: "Software" },
-  { en: "Web-based Application", uz: "veb-ilova", category: "Software" },
-  { en: "Desktop Application", uz: "ish stoli ilovasi", category: "Software" },
-  { en: "Open Source", uz: "ochiq kod", category: "Software" },
-  { en: "Driver", uz: "drayver", category: "Software" },
-  { en: "malware", uz: "zararli dastur", category: "Software" },
-  { en: "Antivirus", uz: "antivirus", category: "Software" },
-  { en: "Firewall", uz: "xavfsizlik devori", category: "Software" },
-  { en: "Browser", uz: "brauzer", category: "Software" },
-  { en: "web browsers", uz: "veb-brauzerlar", category: "Software" },
+  // ==================== INTERNET & BRAUZER ====================
+  { en: "web browser", uz: "veb-brauzer", category: "IC3 Internet" },
+  { en: "browser settings", uz: "brauzer sozlamalari", category: "IC3 Internet" },
+  { en: "private browsing", uz: "maxfiy rejim", category: "IC3 Internet" },
+  { en: "incognito mode", uz: "inkognito rejim", category: "IC3 Internet" },
+  { en: "cookie", uz: "kuki", category: "IC3 Internet" },
+  { en: "cache", uz: "kesh", category: "IC3 Internet" },
+  { en: "browser history", uz: "brauzer tarixi", category: "IC3 Internet" },
+  { en: "search engine", uz: "qidiruv tizimi", category: "IC3 Internet" },
+  { en: "URL", uz: "veb-manzil", category: "IC3 Internet" },
+  { en: "hyperlink", uz: "giperhavola", category: "IC3 Internet" },
+  { en: "domain name", uz: "domen nomi", category: "IC3 Internet" },
+  { en: "IP address", uz: "IP manzil", category: "IC3 Internet" },
+  { en: "DNS", uz: "domen nomlari tizimi", category: "IC3 Internet" },
+  { en: "HTTP", uz: "HTTP protokoli", category: "IC3 Internet" },
+  { en: "HTTPS", uz: "xavfsiz HTTP", category: "IC3 Internet" },
+  { en: "SSL", uz: "xavfsiz soket qatlami", category: "IC3 Security" },
+  { en: "TLS", uz: "transport qatlami xavfsizligi", category: "IC3 Security" },
+  { en: "VPN", uz: "virtual xususiy tarmoq", category: "IC3 Security" },
+  { en: "proxy server", uz: "proksi server", category: "IC3 Internet" },
+  { en: "ISP", uz: "internet provayderi", category: "IC3 Internet" },
+  { en: "bandwidth", uz: "o‘tkazish qobiliyati", category: "IC3 Network" },
+  { en: "latency", uz: "kechikish", category: "IC3 Network" },
+  { en: "packet", uz: "ma'lumot paketi", category: "IC3 Network" },
+  { en: "ping", uz: "ping", category: "IC3 Network" },
+  { en: "DSL", uz: "raqamli abonent liniyasi", category: "IC3 Network" },
+  { en: "Ethernet", uz: "Ethernet", category: "IC3 Network" },
+  { en: "Wi-Fi", uz: "Wi-Fi", category: "IC3 Network" },
+  { en: "router", uz: "router", category: "IC3 Network" },
+  { en: "modem", uz: "modem", category: "IC3 Network" },
+  { en: "LAN", uz: "mahalliy tarmoq", category: "IC3 Network" },
+  { en: "WAN", uz: "keng tarmoq", category: "IC3 Network" },
 
-  // ==================== NETWORK (75 ta) ====================
-  { en: "Local Area Network", uz: "Mahalliy tarmoq", category: "Network" },
-  { en: "Wide Area Network", uz: "Keng tarmoq", category: "Network" },
-  { en: "Wireless Network", uz: "Simsiz tarmoq", category: "Network" },
-  { en: "Wi-Fi", uz: "Wi-Fi", category: "Network" },
-  { en: "Ethernet", uz: "Ethernet", category: "Network" },
-  { en: "IP Address", uz: "IP manzil", category: "Network" },
-  { en: "MAC Address", uz: "MAC manzil", category: "Network" },
-  { en: "DNS", uz: "DNS", category: "Network" },
-  { en: "DHCP", uz: "DHCP", category: "Network" },
-  { en: "Gateway", uz: "Gateway", category: "Network" },
-  { en: "Subnet Mask", uz: "Pastki tarmoq niqobi", category: "Network" },
-  { en: "Protocol", uz: "Protokol", category: "Network" },
-  { en: "TCP/IP", uz: "TCP/IP", category: "Network" },
-  { en: "HTTP", uz: "HTTP", category: "Network" },
-  { en: "HTTPS", uz: "HTTPS", category: "Network" },
-  { en: "FTP", uz: "FTP", category: "Network" },
-  { en: "SMTP", uz: "SMTP", category: "Network" },
-  { en: "POP3", uz: "POP3", category: "Network" },
-  { en: "IMAP", uz: "IMAP", category: "Network" },
-  { en: "SSH", uz: "SSH", category: "Network" },
-  { en: "Telnet", uz: "Telnet", category: "Network" },
-  { en: "VPN", uz: "Virtual xususiy tarmoq", category: "Network" },
-  { en: "LAN Cable", uz: "LAN kabel", category: "Network" },
-  { en: "Fiber Optic", uz: "Optik tola", category: "Network" },
-  { en: "Bandwidth", uz: "O'tkazish qobiliyati", category: "Network" },
-  { en: "Latency", uz: "Kechikish", category: "Network" },
-  { en: "Ping", uz: "Ping", category: "Network" },
-  { en: "Packet", uz: "Paket", category: "Network" },
-  { en: "Router", uz: "Router", category: "Network" },
-  { en: "Switch", uz: "Switch", category: "Network" },
-  { en: "Hub", uz: "Hub", category: "Network" },
-  { en: "Bridge", uz: "Ko'prik", category: "Network" },
-  { en: "Repeater", uz: "Repeater", category: "Network" },
-  { en: "Access Point", uz: "Kirish nuqtasi", category: "Network" },
-  { en: "Modem", uz: "Modem", category: "Network" },
-  { en: "Firewall", uz: "Xavfsizlik devori", category: "Network" },
-  { en: "Proxy Server", uz: "Proksi server", category: "Network" },
-  { en: "Load Balancer", uz: "Yuk balanslagich", category: "Network" },
-  { en: "Network Topology", uz: "Tarmoq topologiyasi", category: "Network" },
-  { en: "Star Topology", uz: "Yulduz topologiyasi", category: "Network" },
-  { en: "Bus Topology", uz: "Shina topologiyasi", category: "Network" },
-  { en: "Ring Topology", uz: "Halqa topologiyasi", category: "Network" },
-  { en: "Mesh Topology", uz: "To'r topologiyasi", category: "Network" },
-  { en: "Peer to Peer", uz: "Tengdosh", category: "Network" },
-  { en: "Client Server", uz: "Mijoz-server", category: "Network" },
-  { en: "Cloud Computing", uz: "Bulutli hisoblash", category: "Network" },
-  { en: "Data Center", uz: "Ma'lumotlar markazi", category: "Network" },
-  { en: "Server", uz: "Server", category: "Network" },
-  { en: "Client", uz: "Mijoz", category: "Network" },
-  { en: "Host", uz: "Host", category: "Network" },
-  { en: "Node", uz: "Tugun", category: "Network" },
-  { en: "Domain", uz: "Domen", category: "Network" },
-  { en: "URL", uz: "URL", category: "Network" },
-  { en: "Web Server", uz: "Veb server", category: "Network" },
-  { en: "Mail Server", uz: "Pochta serveri", category: "Network" },
-  { en: "FTP Server", uz: "FTP server", category: "Network" },
-  { en: "DNS Server", uz: "DNS server", category: "Network" },
-  { en: "DHCP Server", uz: "DHCP server", category: "Network" },
-  { en: "VPN Server", uz: "VPN server", category: "Network" },
-  {
-    en: "network infrastructure",
-    uz: "tarmoq infratuzilmasi",
-    category: "Network",
-  },
-  {
-    en: "connected to the Internet",
-    uz: "internetga ulangan",
-    category: "Network",
-  },
-  {
-    en: "Internet Service Provider (ISP)",
-    uz: "internet xizmat provayderi (ISP)",
-    category: "Network",
-  },
-  {
-    en: "Domain Name Service (DNS)",
-    uz: "domen nomlari xizmati (DNS)",
-    category: "Network",
-  },
-  { en: "Ethernet", uz: "ethernet", category: "Network" },
-  { en: "Wi-Fi", uz: "Wi-Fi", category: "Network" },
-  { en: "Router", uz: "router", category: "Network" },
-  { en: "Modem", uz: "modem", category: "Network" },
-  {
-    en: "Data plan from a cellular carrier",
-    uz: "uyali aloqa operatori ma'lumot paketi",
-    category: "Network",
-  },
-  {
-    en: "Digital Subscriber Line (DSL)",
-    uz: "raqamli abonent liniyasi (DSL)",
-    category: "Network",
-  },
-  { en: "wired network", uz: "simli tarmoq", category: "Network" },
-  {
-    en: "HyperText Markup Language (HTML)",
-    uz: "gipermatn belgilash tili (HTML)",
-    category: "Network",
-  },
+  // ==================== ONLAYN XAVFSIZLIK & MAXFIYLIK ====================
+  { en: "digital privacy", uz: "raqamli maxfiylik", category: "IC3 Security" },
+  { en: "digital footprint", uz: "raqamli iz", category: "IC3 Security" },
+  { en: "digital identity", uz: "raqamli shaxsiyat", category: "IC3 Security" },
+  { en: "online identity", uz: "onlayn shaxsiyat", category: "IC3 Security" },
+  { en: "online predator", uz: "onlayn yirtqich", category: "IC3 Security" },
+  { en: "cyberbullying", uz: "kiberzoravonlik", category: "IC3 Security" },
+  { en: "cyber attack", uz: "kiber hujum", category: "IC3 Security" },
+  { en: "data breach", uz: "ma'lumotlar oqishi", category: "IC3 Security" },
+  { en: "identity theft", uz: "shaxsni o‘g‘irlash", category: "IC3 Security" },
+  { en: "catfishing", uz: "soxta shaxs yaratish", category: "IC3 Security" },
+  { en: "trolling", uz: "trolling", category: "IC3 Communication" },
+  { en: "FOMO", uz: "biror narsadan qolish qo‘rquvi", category: "IC3 Health" },
+  { en: "social engineering", uz: "ijtimoiy muhandislik", category: "IC3 Security" },
+  { en: "keylogger", uz: "klaviatura kuzatuvchi", category: "IC3 Security" },
+  { en: "adware", uz: "reklama dasturi", category: "IC3 Security" },
+  { en: "DDoS", uz: "tarqatilgan xizmat ko‘rsatishni rad etish hujumi", category: "IC3 Security" },
+  { en: "botnet", uz: "bot tarmog‘i", category: "IC3 Security" },
+  { en: "zero-day", uz: "nolinchi kun zaifligi", category: "IC3 Security" },
+  { en: "vulnerability", uz: "zaiflik", category: "IC3 Security" },
+  { en: "exploit", uz: "ekspluat", category: "IC3 Security" },
+  { en: "patch", uz: "yangilanish", category: "IC3 Security" },
+  { en: "update", uz: "yangilash", category: "IC3 Security" },
+  { en: "Anti-tracking extension", uz: "kuzatuvga qarshi kengaytma", category: "IC3 Security" },
+  { en: "GPS tracking", uz: "GPS kuzatuvi", category: "IC3 Security" },
+  { en: "location tracking", uz: "joylashuvni kuzatish", category: "IC3 Security" },
+  { en: "navigation tracking", uz: "navigatsiyani kuzatish", category: "IC3 Security" },
 
-  // ==================== SECURITY (90 ta) ====================
-  { en: "Malware", uz: "Zararli dastur", category: "Security" },
-  { en: "Virus", uz: "Virus", category: "Security" },
-  { en: "Worm", uz: "Qurt", category: "Security" },
-  { en: "Trojan", uz: "Troyan", category: "Security" },
-  { en: "Ransomware", uz: "To'lov talab qiluvchi", category: "Security" },
-  { en: "Spyware", uz: "Josus dastur", category: "Security" },
-  { en: "Adware", uz: "Reklama dasturi", category: "Security" },
-  { en: "Keylogger", uz: "Klaviatura kuzatuvchi", category: "Security" },
-  { en: "Phishing", uz: "Fishing", category: "Security" },
-  {
-    en: "Social Engineering",
-    uz: "Ijtimoiy muhandislik",
-    category: "Security",
-  },
-  { en: "Password", uz: "Parol", category: "Security" },
-  { en: "Strong Password", uz: "Kuchli parol", category: "Security" },
-  {
-    en: "Two-Factor Authentication",
-    uz: "Ikki bosqichli autentifikatsiya",
-    category: "Security",
-  },
-  { en: "Biometrics", uz: "Biometrik", category: "Security" },
-  { en: "Firewall", uz: "Xavfsizlik devori", category: "Security" },
-  { en: "Antivirus", uz: "Antivirus", category: "Security" },
-  { en: "Encryption", uz: "Shifrlash", category: "Security" },
-  { en: "Decryption", uz: "Shifrni ochish", category: "Security" },
-  { en: "Public Key", uz: "Ochiq kalit", category: "Security" },
-  { en: "Private Key", uz: "Maxfiy kalit", category: "Security" },
-  { en: "Digital Signature", uz: "Raqamli imzo", category: "Security" },
-  { en: "Certificate", uz: "Sertifikat", category: "Security" },
-  { en: "HTTPS", uz: "HTTPS", category: "Security" },
-  { en: "SSL", uz: "SSL", category: "Security" },
-  { en: "TLS", uz: "TLS", category: "Security" },
-  { en: "VPN", uz: "VPN", category: "Security" },
-  { en: "Proxy", uz: "Proksi", category: "Security" },
-  { en: "Backup", uz: "Zaxira", category: "Security" },
-  { en: "Recovery", uz: "Qayta tiklash", category: "Security" },
-  { en: "Patch", uz: "Yangilanish", category: "Security" },
-  { en: "Update", uz: "Yangilash", category: "Security" },
-  { en: "Vulnerability", uz: "Zaiflik", category: "Security" },
-  { en: "Exploit", uz: "Ekspluat", category: "Security" },
-  { en: "Zero-Day", uz: "Nolinchi kun", category: "Security" },
-  { en: "DDoS", uz: "DDoS hujum", category: "Security" },
-  { en: "Botnet", uz: "Bot tarmog'i", category: "Security" },
-  { en: "Hacker", uz: "Haker", category: "Security" },
-  { en: "Cracker", uz: "Kraker", category: "Security" },
-  { en: "White Hat", uz: "Oq shapkali", category: "Security" },
-  { en: "Black Hat", uz: "Qora shapkali", category: "Security" },
-  { en: "Gray Hat", uz: "Kulrang shapkali", category: "Security" },
-  { en: "Penetration Testing", uz: "Penetratsion test", category: "Security" },
-  { en: "Security Audit", uz: "Xavfsizlik auditi", category: "Security" },
-  { en: "Access Control", uz: "Kirish nazorati", category: "Security" },
-  { en: "Authentication", uz: "Autentifikatsiya", category: "Security" },
-  { en: "Authorization", uz: "Avtorizatsiya", category: "Security" },
-  { en: "Accounting", uz: "Hisobga olish", category: "Security" },
-  { en: "Privacy", uz: "Maxfiylik", category: "Security" },
-  { en: "Confidentiality", uz: "Konfidensiallik", category: "Security" },
-  { en: "Integrity", uz: "Butunlik", category: "Security" },
-  { en: "Availability", uz: "Mavjudlik", category: "Security" },
-  { en: "Non-Repudiation", uz: "Rad etmaslik", category: "Security" },
-  { en: "GDPR", uz: "GDPR", category: "Security" },
-  { en: "HIPAA", uz: "HIPAA", category: "Security" },
-  { en: "PCI DSS", uz: "PCI DSS", category: "Security" },
-  { en: "ISO 27001", uz: "ISO 27001", category: "Security" },
-  { en: "Data Breach", uz: "Ma'lumotlar oqishi", category: "Security" },
-  { en: "Identity Theft", uz: "Shaxsni o'g'irlash", category: "Security" },
-  { en: "Cyber Attack", uz: "Kiber hujum", category: "Security" },
-  {
-    en: "personal data online",
-    uz: "shaxsiy ma'lumotlar onlaynda",
-    category: "Security",
-  },
-  {
-    en: "personal security issues",
-    uz: "shaxsiy xavfsizlik muammolari",
-    category: "Security",
-  },
-  { en: "password reset", uz: "parolni tiklash", category: "Security" },
-  {
-    en: "digital security threat",
-    uz: "raqamli xavfsizlik tahdidi",
-    category: "Security",
-  },
-  { en: "Trojan", uz: "troyan", category: "Security" },
-  { en: "Malware", uz: "zararli dastur", category: "Security" },
-  { en: "Spyware", uz: "josuslik dasturi", category: "Security" },
-  { en: "Ransomware", uz: "to'lov talab qiluvchi virus", category: "Security" },
-  { en: "Virus", uz: "virus", category: "Security" },
-  { en: "Phishing", uz: "fishing (fişing)", category: "Security" },
-  { en: "cyberbullying", uz: "kiberzoravonlik", category: "Security" },
-  {
-    en: "navigation tracking",
-    uz: "joylashuvni kuzatish",
-    category: "Security",
-  },
-  {
-    en: "Anti-tracking browser extension",
-    uz: "kuzatuvga qarshi brauzer kengaytmasi",
-    category: "Security",
-  },
-  { en: "Single Sign-On (SSO)", uz: "yagona kirish", category: "Security" },
-  {
-    en: "benefits of Single Sign-On",
-    uz: "yagona kirish afzalliklari",
-    category: "Security",
-  },
-  { en: "Access Token", uz: "kirish tokeni", category: "Security" },
-  { en: "alias", uz: "taxallus", category: "Security" },
-  { en: "actual name", uz: "haqiqiy ism", category: "Security" },
-  { en: "Cookie", uz: "kukilar", category: "Security" },
-  { en: "Fair Use", uz: "adolatli foydalanish", category: "Security" },
-  {
-    en: "private mode browsing",
-    uz: "maxfiy rejimda ko'rish",
-    category: "Security",
-  },
-  { en: "digital footprint", uz: "raqamli iz", category: "Security" },
-  { en: "digital identity", uz: "raqamli shaxsiyat", category: "Security" },
-  { en: "online identity", uz: "onlayn shaxsiyat", category: "Security" },
+  // ==================== APPARATURA (HARDWARE) ====================
+  { en: "CPU", uz: "markaziy protsessor", category: "IC3 Hardware" },
+  { en: "RAM", uz: "tezkor xotira", category: "IC3 Hardware" },
+  { en: "ROM", uz: "doimiy xotira", category: "IC3 Hardware" },
+  { en: "hard disk drive", uz: "qattiq disk", category: "IC3 Hardware" },
+  { en: "solid state drive", uz: "tezkor xotirali disk", category: "IC3 Hardware" },
+  { en: "motherboard", uz: "ona plata", category: "IC3 Hardware" },
+  { en: "graphics card", uz: "video karta", category: "IC3 Hardware" },
+  { en: "GPU", uz: "grafik protsessor", category: "IC3 Hardware" },
+  { en: "sound card", uz: "ovoz kartasi", category: "IC3 Hardware" },
+  { en: "network card", uz: "tarmoq kartasi", category: "IC3 Hardware" },
+  { en: "USB flash drive", uz: "fleshka", category: "IC3 Hardware" },
+  { en: "USB", uz: "universal ketma-ket shina", category: "IC3 Hardware" },
+  { en: "USB-C", uz: "USB-C", category: "IC3 Hardware" },
+  { en: "Micro USB", uz: "Micro USB", category: "IC3 Hardware" },
+  { en: "Lightning connector", uz: "Lightning ulagich", category: "IC3 Hardware" },
+  { en: "HDMI", uz: "HDMI", category: "IC3 Hardware" },
+  { en: "VGA", uz: "VGA", category: "IC3 Hardware" },
+  { en: "DisplayPort", uz: "DisplayPort", category: "IC3 Hardware" },
+  { en: "Thunderbolt", uz: "Thunderbolt", category: "IC3 Hardware" },
+  { en: "monitor", uz: "monitor", category: "IC3 Hardware" },
+  { en: "keyboard", uz: "klaviatura", category: "IC3 Hardware" },
+  { en: "mouse", uz: "sichqoncha", category: "IC3 Hardware" },
+  { en: "printer", uz: "printer", category: "IC3 Hardware" },
+  { en: "scanner", uz: "skaner", category: "IC3 Hardware" },
+  { en: "speaker", uz: "dinamik", category: "IC3 Hardware" },
+  { en: "microphone", uz: "mikrofon", category: "IC3 Hardware" },
+  { en: "webcam", uz: "veb-kamera", category: "IC3 Hardware" },
+  { en: "headphones", uz: "quloqchin", category: "IC3 Hardware" },
+  { en: "touch screen", uz: "sensorli ekran", category: "IC3 Hardware" },
+  { en: "stylus", uz: "stilus", category: "IC3 Hardware" },
+  { en: "trackpad", uz: "sensorli panel", category: "IC3 Hardware" },
+  { en: "cooling fan", uz: "sovutish ventilyatori", category: "IC3 Hardware" },
+  { en: "BIOS", uz: "BIOS", category: "IC3 Hardware" },
+  { en: "CMOS battery", uz: "CMOS batareyasi", category: "IC3 Hardware" },
 
-  // ==================== OS (80 ta) ====================
-  { en: "Windows", uz: "Windows", category: "OS" },
-  { en: "macOS", uz: "macOS", category: "OS" },
-  { en: "Linux", uz: "Linux", category: "OS" },
-  { en: "Android", uz: "Android", category: "OS" },
-  { en: "iOS", uz: "iOS", category: "OS" },
-  { en: "Kernel", uz: "Yadro", category: "OS" },
-  { en: "Shell", uz: "Qobiq", category: "OS" },
-  { en: "File System", uz: "Fayl tizimi", category: "OS" },
-  { en: "Process", uz: "Jarayon", category: "OS" },
-  { en: "Thread", uz: "Ip", category: "OS" },
-  { en: "Multitasking", uz: "Ko'p vazifalilik", category: "OS" },
-  { en: "Multithreading", uz: "Ko'p iplik", category: "OS" },
-  { en: "Virtual Memory", uz: "Virtual xotira", category: "OS" },
-  { en: "Paging", uz: "Sahifalash", category: "OS" },
-  { en: "Segmentation", uz: "Segmentatsiya", category: "OS" },
-  { en: "Scheduling", uz: "Rejalashtirish", category: "OS" },
-  { en: "Interrupt", uz: "Uzilish", category: "OS" },
-  { en: "System Call", uz: "Tizim chaqiruvi", category: "OS" },
-  { en: "API", uz: "API", category: "OS" },
-  { en: "Device Driver", uz: "Qurilma drayveri", category: "OS" },
-  { en: "User Interface", uz: "Foydalanuvchi interfeysi", category: "OS" },
-  { en: "GUI", uz: "Grafik interfeys", category: "OS" },
-  { en: "CLI", uz: "Buyruq satri", category: "OS" },
-  { en: "Desktop", uz: "Ish stoli", category: "OS" },
-  { en: "Taskbar", uz: "Vazifalar paneli", category: "OS" },
-  { en: "Start Menu", uz: "Ishga tushirish menyusi", category: "OS" },
-  { en: "File Explorer", uz: "Fayl boshqaruvchisi", category: "OS" },
-  { en: "Finder", uz: "Finder", category: "OS" },
-  { en: "Terminal", uz: "Terminal", category: "OS" },
-  { en: "Command Prompt", uz: "Buyruq satri", category: "OS" },
-  { en: "PowerShell", uz: "PowerShell", category: "OS" },
-  { en: "Registry", uz: "Registr", category: "OS" },
-  { en: "Boot", uz: "Yuklash", category: "OS" },
-  { en: "Shutdown", uz: "O'chirish", category: "OS" },
-  { en: "Restart", uz: "Qayta yuklash", category: "OS" },
-  { en: "Sleep", uz: "Uyqu", category: "OS" },
-  { en: "Hibernate", uz: "Gibernatsiya", category: "OS" },
-  { en: "Log In", uz: "Kirish", category: "OS" },
-  { en: "Log Out", uz: "Chiqish", category: "OS" },
-  { en: "User Account", uz: "Foydalanuvchi hisobi", category: "OS" },
-  { en: "Administrator", uz: "Administrator", category: "OS" },
-  { en: "Guest Account", uz: "Mehmon hisobi", category: "OS" },
-  { en: "Permission", uz: "Ruxsat", category: "OS" },
-  { en: "Privilege", uz: "Imtiyoz", category: "OS" },
-  { en: "Root", uz: "Root", category: "OS" },
-  { en: "Superuser", uz: "Superuser", category: "OS" },
-  { en: "Environment Variable", uz: "Muhit o'zgaruvchisi", category: "OS" },
-  { en: "Path", uz: "Yo'l", category: "OS" },
-  { en: "Directory", uz: "Katalog", category: "OS" },
-  { en: "Folder", uz: "Papka", category: "OS" },
-  { en: "File", uz: "Fayl", category: "OS" },
-  { en: "Extension", uz: "Kengaytma", category: "OS" },
-  { en: "Executable", uz: "Bajariladigan", category: "OS" },
-  { en: "Library", uz: "Kutubxona", category: "OS" },
-  { en: "DLL", uz: "DLL", category: "OS" },
-  { en: "Service", uz: "Xizmat", category: "OS" },
-  { en: "Daemon", uz: "Fon jarayoni", category: "OS" },
-  { en: "Process ID", uz: "Jarayon ID", category: "OS" },
-  { en: "Priority", uz: "Prioritet", category: "OS" },
-  { en: "Resource", uz: "Resurs", category: "OS" },
-  { en: "operating systems", uz: "operatsion tizimlar", category: "OS" },
-  {
-    en: "mobile device operating systems",
-    uz: "mobil qurilma operatsion tizimlari",
-    category: "OS",
-  },
-  {
-    en: "primary desktop computer operating systems",
-    uz: "asosiy ish stoli operatsion tizimlari",
-    category: "OS",
-  },
-  {
-    en: "operating system concepts",
-    uz: "operatsion tizim tushunchalari",
-    category: "OS",
-  },
-  { en: "Taskbar", uz: "vazifalar paneli", category: "OS" },
-  { en: "Boot", uz: "yuklash (boot)", category: "OS" },
-  { en: "Driver", uz: "drayver", category: "OS" },
-  { en: "Daemon", uz: "demon (fon jarayoni)", category: "OS" },
-  { en: "Open Source", uz: "ochiq kod", category: "OS" },
+  // ==================== OPERATSION TIZIM ====================
+  { en: "operating system", uz: "operatsion tizim", category: "IC3 OS" },
+  { en: "Windows", uz: "Windows", category: "IC3 OS" },
+  { en: "macOS", uz: "macOS", category: "IC3 OS" },
+  { en: "Linux", uz: "Linux", category: "IC3 OS" },
+  { en: "Android", uz: "Android", category: "IC3 OS" },
+  { en: "iOS", uz: "iOS", category: "IC3 OS" },
+  { en: "kernel", uz: "yadro", category: "IC3 OS" },
+  { en: "shell", uz: "qobiq", category: "IC3 OS" },
+  { en: "file system", uz: "fayl tizimi", category: "IC3 OS" },
+  { en: "process", uz: "jarayon", category: "IC3 OS" },
+  { en: "thread", uz: "ip", category: "IC3 OS" },
+  { en: "multitasking", uz: "ko‘p vazifalilik", category: "IC3 OS" },
+  { en: "multithreading", uz: "ko‘p iplik", category: "IC3 OS" },
+  { en: "virtual memory", uz: "virtual xotira", category: "IC3 OS" },
+  { en: "taskbar", uz: "vazifalar paneli", category: "IC3 OS" },
+  { en: "start menu", uz: "ishga tushirish menyusi", category: "IC3 OS" },
+  { en: "file explorer", uz: "fayl boshqaruvchisi", category: "IC3 OS" },
+  { en: "command prompt", uz: "buyruq satri", category: "IC3 OS" },
+  { en: "PowerShell", uz: "PowerShell", category: "IC3 OS" },
+  { en: "registry", uz: "registr", category: "IC3 OS" },
+  { en: "boot", uz: "yuklash", category: "IC3 OS" },
+  { en: "shutdown", uz: "o‘chirish", category: "IC3 OS" },
+  { en: "restart", uz: "qayta yuklash", category: "IC3 OS" },
+  { en: "sleep", uz: "uyqu", category: "IC3 OS" },
+  { en: "hibernate", uz: "gibernatsiya", category: "IC3 OS" },
+  { en: "login", uz: "kirish", category: "IC3 OS" },
+  { en: "logout", uz: "chiqish", category: "IC3 OS" },
+  { en: "user account", uz: "foydalanuvchi hisobi", category: "IC3 OS" },
+  { en: "administrator", uz: "administrator", category: "IC3 OS" },
+  { en: "guest account", uz: "mehmon hisobi", category: "IC3 OS" },
+  { en: "permission", uz: "ruxsat", category: "IC3 OS" },
+  { en: "privilege", uz: "imtiyoz", category: "IC3 OS" },
+  { en: "root", uz: "root", category: "IC3 OS" },
+  { en: "superuser", uz: "superuser", category: "IC3 OS" },
+  { en: "driver", uz: "drayver", category: "IC3 OS" },
+  { en: "daemon", uz: "fon jarayoni", category: "IC3 OS" },
 
-  // ==================== INTERNET / WEB (70 ta) ====================
-  {
-    en: "World Wide Web",
-    uz: "Butunjahon o'rgimchak to'ri",
-    category: "Internet",
-  },
-  { en: "Website", uz: "Veb-sayt", category: "Internet" },
-  { en: "Web Page", uz: "Veb-sahifa", category: "Internet" },
-  { en: "Home Page", uz: "Bosh sahifa", category: "Internet" },
-  { en: "Hyperlink", uz: "Giperhavola", category: "Internet" },
-  { en: "URL", uz: "URL", category: "Internet" },
-  { en: "Domain Name", uz: "Domen nomi", category: "Internet" },
-  { en: "IP Address", uz: "IP manzil", category: "Internet" },
-  { en: "DNS", uz: "DNS", category: "Internet" },
-  { en: "Web Server", uz: "Veb server", category: "Internet" },
-  { en: "Web Hosting", uz: "Veb xosting", category: "Internet" },
-  { en: "Browser", uz: "Brauzer", category: "Internet" },
-  { en: "Search Engine", uz: "Qidiruv tizimi", category: "Internet" },
-  { en: "Google", uz: "Google", category: "Internet" },
-  { en: "Bing", uz: "Bing", category: "Internet" },
-  { en: "Yahoo", uz: "Yahoo", category: "Internet" },
-  { en: "Bookmark", uz: "Xatcho'p", category: "Internet" },
-  { en: "History", uz: "Tarix", category: "Internet" },
-  { en: "Cache", uz: "Kesh", category: "Internet" },
-  { en: "Cookie", uz: "Cookie", category: "Internet" },
-  { en: "Session", uz: "Sessiya", category: "Internet" },
-  { en: "HTML", uz: "HTML", category: "Internet" },
-  { en: "CSS", uz: "CSS", category: "Internet" },
-  { en: "JavaScript", uz: "JavaScript", category: "Internet" },
-  { en: "HTTP", uz: "HTTP", category: "Internet" },
-  { en: "HTTPS", uz: "HTTPS", category: "Internet" },
-  { en: "FTP", uz: "FTP", category: "Internet" },
-  { en: "Email", uz: "Elektron pochta", category: "Internet" },
-  { en: "Spam", uz: "Spam", category: "Internet" },
-  { en: "Attachment", uz: "Qo'shimcha", category: "Internet" },
-  { en: "Download", uz: "Yuklab olish", category: "Internet" },
-  { en: "Upload", uz: "Yuklash", category: "Internet" },
-  { en: "Streaming", uz: "Streaming", category: "Internet" },
-  { en: "Social Media", uz: "Ijtimoiy tarmoq", category: "Internet" },
-  { en: "Facebook", uz: "Facebook", category: "Internet" },
-  { en: "Twitter", uz: "Twitter", category: "Internet" },
-  { en: "Instagram", uz: "Instagram", category: "Internet" },
-  { en: "LinkedIn", uz: "LinkedIn", category: "Internet" },
-  { en: "YouTube", uz: "YouTube", category: "Internet" },
-  { en: "Blog", uz: "Blog", category: "Internet" },
-  { en: "Forum", uz: "Forum", category: "Internet" },
-  { en: "Chat", uz: "Chat", category: "Internet" },
-  { en: "Instant Messaging", uz: "Tezkor xabar", category: "Internet" },
-  { en: "VoIP", uz: "VoIP", category: "Internet" },
-  { en: "Video Conference", uz: "Video konferensiya", category: "Internet" },
-  { en: "Webinar", uz: "Vebinar", category: "Internet" },
-  { en: "E-commerce", uz: "Elektron tijorat", category: "Internet" },
-  { en: "Online Banking", uz: "Onlayn banking", category: "Internet" },
-  { en: "Cloud", uz: "Bulut", category: "Internet" },
-  { en: "Cloud Storage", uz: "Bulutli xotira", category: "Internet" },
-  { en: "Google Drive", uz: "Google Drive", category: "Internet" },
-  { en: "Dropbox", uz: "Dropbox", category: "Internet" },
-  { en: "OneDrive", uz: "OneDrive", category: "Internet" },
-  { en: "iCloud", uz: "iCloud", category: "Internet" },
-  { en: "Wikipedia", uz: "Vikipediya", category: "Internet" },
-  {
-    en: "social media site",
-    uz: "ijtimoiy tarmoq sayti",
-    category: "Internet",
-  },
-  {
-    en: "social media guidelines",
-    uz: "ijtimoiy tarmoq qoidalari",
-    category: "Internet",
-  },
-  {
-    en: "browser three-dot menu",
-    uz: "brauzer uch nuqta menyusi",
-    category: "Internet",
-  },
-  { en: "web browsers", uz: "veb-brauzerlar", category: "Internet" },
-  { en: "browser settings", uz: "brauzer sozlamalari", category: "Internet" },
-  {
-    en: "digital collaboration",
-    uz: "raqamli hamkorlik",
-    category: "Internet",
-  },
-  { en: "gaming forum", uz: "o'yin forumi", category: "Internet" },
-  {
-    en: "accurate and unbiased information",
-    uz: "aniq va xolis ma'lumot",
-    category: "Internet",
-  },
-  { en: "citation", uz: "iqtibos (havola)", category: "Internet" },
-  { en: "copyright", uz: "mualliflik huquqi", category: "Internet" },
-  {
-    en: "CC-BY Creative Commons License",
-    uz: "CC-BY Creative Commons litsenziyasi",
-    category: "Internet",
-  },
-  {
-    en: "retrieval statement",
-    uz: "qayta tiklash bayoni (kirish sanasi va URL)",
-    category: "Internet",
-  },
-  {
-    en: "locating information in a file",
-    uz: "faylda ma'lumot topish",
-    category: "Internet",
-  },
+  // ==================== DASTURIY TA'MINOT ====================
+  { en: "application software", uz: "amaliy dastur", category: "IC3 Software" },
+  { en: "system software", uz: "tizim dasturi", category: "IC3 Software" },
+  { en: "web application", uz: "veb-ilova", category: "IC3 Software" },
+  { en: "desktop application", uz: "ish stoli ilovasi", category: "IC3 Software" },
+  { en: "mobile app", uz: "mobil ilova", category: "IC3 Software" },
+  { en: "open source", uz: "ochiq kod", category: "IC3 Software" },
+  { en: "proprietary software", uz: "xususiy dastur", category: "IC3 Software" },
+  { en: "freeware", uz: "bepul dastur", category: "IC3 Software" },
+  { en: "shareware", uz: "sinov dasturi", category: "IC3 Software" },
+  { en: "spreadsheet", uz: "jadval muharriri", category: "IC3 Software" },
+  { en: "word processor", uz: "matn muharriri", category: "IC3 Software" },
+  { en: "presentation software", uz: "taqdimot dasturi", category: "IC3 Software" },
+  { en: "database", uz: "ma'lumotlar bazasi", category: "IC3 Software" },
+  { en: "PDF", uz: "ko‘chma hujjat formati", category: "IC3 Software" },
+  { en: "file extension", uz: "fayl kengaytmasi", category: "IC3 Software" },
+  { en: ".exe", uz: "bajariladigan fayl", category: "IC3 Software" },
+  { en: ".pdf", uz: "PDF fayl", category: "IC3 Software" },
+  { en: ".docx", uz: "Word hujjati", category: "IC3 Software" },
+  { en: ".xlsx", uz: "Excel jadvali", category: "IC3 Software" },
+  { en: ".pptx", uz: "PowerPoint taqdimoti", category: "IC3 Software" },
+  { en: ".txt", uz: "matn fayli", category: "IC3 Software" },
+  { en: ".rtf", uz: "boy matn formati", category: "IC3 Software" },
+  { en: ".jpg", uz: "rasm fayli", category: "IC3 Software" },
+  { en: ".png", uz: "rasm fayli (shaffof fon)", category: "IC3 Software" },
+  { en: ".gif", uz: "animatsion rasm", category: "IC3 Software" },
+  { en: ".mp3", uz: "audio fayl", category: "IC3 Software" },
+  { en: ".mp4", uz: "video fayl", category: "IC3 Software" },
+  { en: ".zip", uz: "siqilgan fayl", category: "IC3 Software" },
+  { en: "compression", uz: "siqish", category: "IC3 Software" },
+  { en: "zipping", uz: "zip bilan siqish", category: "IC3 Software" },
 
-  // ==================== PRINTING & DOCUMENTS (30 ta) ====================
-  {
-    en: "double-sided printing",
-    uz: "ikki tomonlama chop etish",
-    category: "Printing",
-  },
-  { en: "Duplex printing", uz: "dupleks chop etish", category: "Printing" },
-  { en: "print settings", uz: "chop etish sozlamalari", category: "Printing" },
-  { en: "Slides per page", uz: "sahifada slaydlar soni", category: "Printing" },
-  { en: "Pages per sheet", uz: "varaqda sahifalar soni", category: "Printing" },
-  { en: "printing methods", uz: "chop etish usullari", category: "Printing" },
-  {
-    en: "attribution and referencing",
-    uz: "manbaga ishora va havola qilish",
-    category: "Printing",
-  },
-  {
-    en: "file-naming conventions",
-    uz: "fayl nomlash qoidalari",
-    category: "Printing",
-  },
-  { en: "research paper", uz: "ilmiy maqola", category: "Printing" },
-  { en: "data storage", uz: "ma'lumot saqlash", category: "Printing" },
-  {
-    en: "Hard Disk Drive (HDD)",
-    uz: "qattiq disk (HDD)",
-    category: "Printing",
-  },
-  {
-    en: "Solid State Drive (SSD)",
-    uz: "qattiq holatdagi disk (SSD)",
-    category: "Printing",
-  },
-  { en: "USB Flash Drive", uz: "USB flesh-disk", category: "Printing" },
-  { en: "auto backup", uz: "avtomatik zaxira nusxa", category: "Printing" },
-  { en: "cloud service", uz: "bulutli xizmat", category: "Printing" },
+  // ==================== HAMKORLIK & ALOQA ====================
+  { en: "digital collaboration", uz: "raqamli hamkorlik", category: "IC3 Communication" },
+  { en: "synchronous communication", uz: "sinxron aloqa", category: "IC3 Communication" },
+  { en: "asynchronous communication", uz: "asinxron aloqa", category: "IC3 Communication" },
+  { en: "video conferencing", uz: "video konferensiya", category: "IC3 Communication" },
+  { en: "webinar", uz: "vebinar", category: "IC3 Communication" },
+  { en: "instant messaging", uz: "tezkor xabar", category: "IC3 Communication" },
+  { en: "text messaging", uz: "matnli xabar", category: "IC3 Communication" },
+  { en: "email", uz: "elektron pochta", category: "IC3 Communication" },
+  { en: "live chat", uz: "jonli chat", category: "IC3 Communication" },
+  { en: "online forum", uz: "onlayn forum", category: "IC3 Communication" },
+  { en: "social media", uz: "ijtimoiy tarmoq", category: "IC3 Communication" },
+  { en: "digital etiquette", uz: "raqamli odob", category: "IC3 Communication" },
+  { en: "netiquette", uz: "tarmoq odobi", category: "IC3 Communication" },
+  { en: "Acceptable Use Policy", uz: "qabul qilinadigan foydalanish siyosati", category: "IC3 Communication" },
+  { en: "inclusive language", uz: "inklyuziv til", category: "IC3 Communication" },
+  { en: "textspeak", uz: "qisqartma til", category: "IC3 Communication" },
+  { en: "emoji", uz: "emoji", category: "IC3 Communication" },
+  { en: "Cc", uz: "nusxa", category: "IC3 Communication" },
+  { en: "Bcc", uz: "yashirin nusxa", category: "IC3 Communication" },
+  { en: "Reply All", uz: "hammaga javob", category: "IC3 Communication" },
+  { en: "Forward", uz: "boshqaga yuborish", category: "IC3 Communication" },
+  { en: "Reply", uz: "javob berish", category: "IC3 Communication" },
+  { en: "subject line", uz: "mavzu qatori", category: "IC3 Communication" },
+  { en: "spam", uz: "spam", category: "IC3 Communication" },
 
-  // ==================== COMMUNICATION & ETIQUETTE (35 ta) ====================
-  { en: "inclusive language", uz: "inklyuziv til", category: "Communication" },
-  {
-    en: "digital etiquette for visual collaboration",
-    uz: "video hamkorlikdagi raqamli odob",
-    category: "Communication",
-  },
-  {
-    en: "synchronous communication",
-    uz: "sinxron aloqa",
-    category: "Communication",
-  },
-  {
-    en: "asynchronous communication",
-    uz: "asinxron aloqa",
-    category: "Communication",
-  },
-  {
-    en: "textspeak",
-    uz: "qisqartma til (matn tili)",
-    category: "Communication",
-  },
-  {
-    en: "Acceptable Use Policies",
-    uz: "qabul qilinadigan foydalanish qoidalari",
-    category: "Communication",
-  },
-  { en: "digital etiquette", uz: "raqamli odob", category: "Communication" },
-  {
-    en: "email response options",
-    uz: "elektron pochta javob opsiyalari",
-    category: "Communication",
-  },
-  { en: "Cc", uz: "nusxa", category: "Communication" },
-  { en: "Bcc", uz: "yashirin nusxa", category: "Communication" },
-  { en: "Reply All", uz: "hammaga javob", category: "Communication" },
-  { en: "Forward", uz: "boshqaga yuborish", category: "Communication" },
-  { en: "Reply", uz: "javob berish", category: "Communication" },
-  { en: "To", uz: "kimga", category: "Communication" },
-  {
-    en: "digital photos",
-    uz: "raqamli fotosuratlar",
-    category: "Communication",
-  },
-  {
-    en: "visual collaboration",
-    uz: "vizual hamkorlik",
-    category: "Communication",
-  },
-  { en: "derogatory memes", uz: "haqoratli memlar", category: "Communication" },
-  {
-    en: "Breadcrumb",
-    uz: "breadcrumb (ierarxik navigatsiya yo'li)",
-    category: "Communication",
-  },
+  // ==================== HAMKORLIKDA ISHLASH ====================
+  { en: "coauthoring", uz: "birgalikda mualliflik", category: "IC3 Collaboration" },
+  { en: "peer review", uz: "tengdosh tahriri", category: "IC3 Collaboration" },
+  { en: "track changes", uz: "o‘zgarishlarni kuzatish", category: "IC3 Collaboration" },
+  { en: "comment", uz: "izoh", category: "IC3 Collaboration" },
+  { en: "feedback", uz: "fikr-mulohaza", category: "IC3 Collaboration" },
+  { en: "constructive feedback", uz: "konstruktiv fikr", category: "IC3 Collaboration" },
+  { en: "Google Docs", uz: "Google Docs", category: "IC3 Collaboration" },
+  { en: "cloud sharing", uz: "bulutli almashish", category: "IC3 Collaboration" },
+  { en: "shared document", uz: "umumiy hujjat", category: "IC3 Collaboration" },
+  { en: "version control", uz: "versiya nazorati", category: "IC3 Collaboration" },
+  { en: "file versioning", uz: "fayl versiyalari", category: "IC3 Collaboration" },
+  { en: "macro", uz: "makros", category: "IC3 Collaboration" },
 
-  // ==================== HEALTH & WELLNESS (20 ta) ====================
-  {
-    en: "prolonged computer and device usage",
-    uz: "uzoq muddatli kompyuter va qurilma foydalanish",
-    category: "Health",
-  },
-  {
-    en: "physical health threats",
-    uz: "jismoniy salomatlik xavflari",
-    category: "Health",
-  },
-  { en: "Vision problems", uz: "ko'rish muammolari", category: "Health" },
-  { en: "Muscular issues", uz: "mushak muammolari", category: "Health" },
-  { en: "Social issues", uz: "ijtimoiy muammolar", category: "Health" },
-  { en: "Gaming burnout", uz: "o'yin charchoqligi", category: "Health" },
+  // ==================== MUALLIFLIK HUQUQI & IQTIBOS ====================
+  { en: "copyright", uz: "mualliflik huquqi", category: "IC3 Legal" },
+  { en: "Creative Commons", uz: "Creative Commons litsenziyasi", category: "IC3 Legal" },
+  { en: "CC BY", uz: "Attribution litsenziyasi", category: "IC3 Legal" },
+  { en: "CC BY-SA", uz: "Attribution-ShareAlike", category: "IC3 Legal" },
+  { en: "CC BY-ND", uz: "Attribution-NoDerivs", category: "IC3 Legal" },
+  { en: "CC BY-NC", uz: "Attribution-NonCommercial", category: "IC3 Legal" },
+  { en: "public domain", uz: "jamoat mulki", category: "IC3 Legal" },
+  { en: "citation", uz: "iqtibos", category: "IC3 Legal" },
+  { en: "attribution", uz: "manbaga ishora", category: "IC3 Legal" },
+  { en: "referencing", uz: "havola qilish", category: "IC3 Legal" },
+  { en: "bibliography", uz: "bibliografiya", category: "IC3 Legal" },
+  { en: "plagiarism", uz: "plagiat", category: "IC3 Legal" },
+  { en: "fair use", uz: "adolatli foydalanish", category: "IC3 Legal" },
+  { en: "retrieval statement", uz: "qayta tiklash bayoni", category: "IC3 Legal" },
+
+  // ==================== QIDIRUV VA MA'LUMOT ====================
+  { en: "search query", uz: "qidiruv so‘rovi", category: "IC3 Research" },
+  { en: "keyword", uz: "kalit so‘z", category: "IC3 Research" },
+  { en: "search filter", uz: "qidiruv filtri", category: "IC3 Research" },
+  { en: "Boolean search", uz: "Boolean qidiruvi", category: "IC3 Research" },
+  { en: "AND operator", uz: "VA operatori", category: "IC3 Research" },
+  { en: "OR operator", uz: "YOKI operatori", category: "IC3 Research" },
+  { en: "NOT operator", uz: "EMAS operatori", category: "IC3 Research" },
+  { en: "quotation marks", uz: "qo‘shtirnoq", category: "IC3 Research" },
+  { en: "credible source", uz: "ishonchli manba", category: "IC3 Research" },
+  { en: "bias", uz: "tarafkashlik", category: "IC3 Research" },
+  { en: "unbiased information", uz: "xolis ma'lumot", category: "IC3 Research" },
+  { en: "reliability", uz: "ishonchlilik", category: "IC3 Research" },
+  { en: "accuracy", uz: "aniqlik", category: "IC3 Research" },
+  { en: "relevance", uz: "dolzarblik", category: "IC3 Research" },
+  { en: "publication date", uz: "nashr sanasi", category: "IC3 Research" },
+  { en: ".gov domain", uz: "hukumat domeni", category: "IC3 Research" },
+  { en: ".edu domain", uz: "ta'lim domeni", category: "IC3 Research" },
+  { en: "Find feature", uz: "Topish funksiyasi", category: "IC3 Research" },
+
+  // ==================== BOSIB CHIQARISH & HUJJATLAR ====================
+  { en: "printing", uz: "chop etish", category: "IC3 Printing" },
+  { en: "duplex printing", uz: "ikki tomonlama chop etish", category: "IC3 Printing" },
+  { en: "double-sided printing", uz: "ikki tomonlama bosish", category: "IC3 Printing" },
+  { en: "print settings", uz: "chop sozlamalari", category: "IC3 Printing" },
+  { en: "pages per sheet", uz: "varaqda sahifalar", category: "IC3 Printing" },
+  { en: "slides per page", uz: "sahifada slaydlar", category: "IC3 Printing" },
+  { en: "print queue", uz: "chop navbati", category: "IC3 Printing" },
+  { en: "inkjet printer", uz: "siyohli printer", category: "IC3 Printing" },
+  { en: "laser printer", uz: "lazer printer", category: "IC3 Printing" },
+  { en: "header", uz: "sarlavha", category: "IC3 Printing" },
+  { en: "footer", uz: "taglavha", category: "IC3 Printing" },
+  { en: "page number", uz: "sahifa raqami", category: "IC3 Printing" },
+  { en: "margin", uz: "chegara", category: "IC3 Printing" },
+  { en: "orientation", uz: "yo‘nalish", category: "IC3 Printing" },
+  { en: "portrait", uz: "portret", category: "IC3 Printing" },
+  { en: "landscape", uz: "peyzaj", category: "IC3 Printing" },
+
+  // ==================== SALOMATLIK ====================
+  { en: "eye strain", uz: "ko‘z zo‘riqishi", category: "IC3 Health" },
+  { en: "repetitive strain injury", uz: "takroriy zo‘riqish shikasti", category: "IC3 Health" },
+  { en: "RSI", uz: "RSI", category: "IC3 Health" },
+  { en: "carpal tunnel", uz: "karpal tunnel", category: "IC3 Health" },
+  { en: "ergonomic keyboard", uz: "ergonomik klaviatura", category: "IC3 Health" },
+  { en: "back pain", uz: "bel og‘rig‘i", category: "IC3 Health" },
+  { en: "neck discomfort", uz: "bo‘yin noqulayligi", category: "IC3 Health" },
+  { en: "headache", uz: "bosh og‘rig‘i", category: "IC3 Health" },
+  { en: "prolonged computer use", uz: "uzoq kompyuter ishlatish", category: "IC3 Health" },
+  { en: "gaming burnout", uz: "o‘yin charchog‘i", category: "IC3 Health" },
+
+  // ==================== BULUTLI TEXNOLOGIYALAR ====================
+  { en: "cloud computing", uz: "bulutli hisoblash", category: "IC3 Cloud" },
+  { en: "cloud service", uz: "bulutli xizmat", category: "IC3 Cloud" },
+  { en: "Google Drive", uz: "Google Drive", category: "IC3 Cloud" },
+  { en: "OneDrive", uz: "OneDrive", category: "IC3 Cloud" },
+  { en: "Dropbox", uz: "Dropbox", category: "IC3 Cloud" },
+  { en: "iCloud", uz: "iCloud", category: "IC3 Cloud" },
+  { en: "auto backup", uz: "avtomatik zaxira", category: "IC3 Cloud" },
+  { en: "file sync", uz: "fayl sinxronizatsiyasi", category: "IC3 Cloud" },
+
+  // ==================== SUN'IY INTELLEKT (AI) ====================
+  { en: "artificial intelligence", uz: "sun'iy intellekt", category: "IC3 AI" },
+  { en: "AI", uz: "SI", category: "IC3 AI" },
+  { en: "machine learning", uz: "mashinaviy o‘rganish", category: "IC3 AI" },
+  { en: "natural language processing", uz: "tabiiy tilni qayta ishlash", category: "IC3 AI" },
+  { en: "neural network", uz: "neyron tarmoq", category: "IC3 AI" },
+  { en: "deep learning", uz: "chuqur o‘rganish", category: "IC3 AI" },
+  { en: "robotics", uz: "robototexnika", category: "IC3 AI" },
+  { en: "deepfake", uz: "chuqur soxta", category: "IC3 AI" },
+  { en: "AI bias", uz: "sun'iy intellekt tarafkashligi", category: "IC3 AI" },
+  { en: "generative AI", uz: "generativ sun'iy intellekt", category: "IC3 AI" },
+
+  // ==================== BOSHQALAR ====================
+  { en: "file naming convention", uz: "fayl nomlash qoidalari", category: "IC3 General" },
+  { en: "digital wallet", uz: "raqamli hamyon", category: "IC3 General" },
+  { en: "Google Pay", uz: "Google Pay", category: "IC3 General" },
+  { en: "in-app purchase", uz: "ilova ichidagi xarid", category: "IC3 General" },
+  { en: "digital payment", uz: "raqamli to‘lov", category: "IC3 General" },
+  { en: "Single Sign-On", uz: "yagona kirish", category: "IC3 Security" },
+  { en: "SSO", uz: "yagona kirish tizimi", category: "IC3 Security" },
+  { en: "access token", uz: "kirish tokeni", category: "IC3 Security" },
+  { en: "alias", uz: "taxallus", category: "IC3 General" },
+  { en: "breadcrumb", uz: "navigatsiya yo‘li", category: "IC3 General" },
+
+
+
+  // ==================== QO‘SHIMCHA 100 TA ATAMA (IC3 GS6) ====================
+
+  // ==================== XAVFSIZLIK & MAXFIYLIK (20 ta) ====================
+  { en: "account takeover", uz: "hisobni egallab olish", category: "IC3 Security" },
+  { en: "anonymous browsing", uz: "anonim ko‘rish", category: "IC3 Security" },
+  { en: "anti-spyware", uz: "anti-josuslik dasturi", category: "IC3 Security" },
+  { en: "brute force attack", uz: "qo‘pol kuch hujumi", category: "IC3 Security" },
+  { en: "credential stuffing", uz: "hisob ma'lumotlarini to‘ldirish", category: "IC3 Security" },
+  { en: "data leakage", uz: "ma'lumotlar sizib chiqishi", category: "IC3 Security" },
+  { en: "digital certificate", uz: "raqamli sertifikat", category: "IC3 Security" },
+  { en: "end-to-end encryption", uz: "uchdan uchga shifrlash", category: "IC3 Security" },
+  { en: "ethical hacking", uz: "axloqiy hakerlik", category: "IC3 Security" },
+  { en: "identity spoofing", uz: "shaxsni aldash", category: "IC3 Security" },
+  { en: "man-in-the-middle attack", uz: "o‘rtadagi odam hujumi", category: "IC3 Security" },
+  { en: "one-time password", uz: "bir martalik parol", category: "IC3 Security" },
+  { en: "PIN code", uz: "shaxsiy identifikatsiya raqami", category: "IC3 Security" },
+  { en: "privacy policy", uz: "maxfiylik siyosati", category: "IC3 Security" },
+  { en: "rootkit", uz: "rootkit (yashirin zararli dastur)", category: "IC3 Security" },
+  { en: "security patch", uz: "xavfsizlik yangilanishi", category: "IC3 Security" },
+  { en: "session hijacking", uz: "sessiyani o‘g‘irlash", category: "IC3 Security" },
+  { en: "shoulder surfing", uz: "yelkadan kuzatish", category: "IC3 Security" },
+  { en: "two-step verification", uz: "ikki bosqichli tekshiruv", category: "IC3 Security" },
+  { en: "zero-click attack", uz: "nolinchi bosish hujumi", category: "IC3 Security" },
+
+  // ==================== ONLAYN XULQ & ODOB (10 ta) ====================
+  { en: "cyberstalking", uz: "kiberta'qib", category: "IC3 Communication" },
+  { en: "doxxing", uz: "shaxsiy ma'lumotlarni oshkor qilish", category: "IC3 Communication" },
+  { en: "flaming", uz: "dushmanona onlayn xabar", category: "IC3 Communication" },
+  { en: "grooming", uz: "bolalarni onlayn aldash", category: "IC3 Communication" },
+  { en: "hate speech", uz: "nafrat so‘zlari", category: "IC3 Communication" },
+  { en: "online harassment", uz: "onlayn ta'qib", category: "IC3 Communication" },
+  { en: "sexting", uz: "jinsiy mazmundagi xabar", category: "IC3 Communication" },
+  { en: "sharenting", uz: "ota-onalarning bola haqida haddan tashqari post qilishi", category: "IC3 Communication" },
+  { en: "subtrolling", uz: "yashirin trolling", category: "IC3 Communication" },
+  { en: "viral content", uz: "virusli kontent", category: "IC3 Communication" },
+
+  // ==================== APPARATURA (10 ta) ====================
+  { en: "Bluetooth", uz: "Bluetooth", category: "IC3 Hardware" },
+  { en: "docking station", uz: "dok stansiyasi", category: "IC3 Hardware" },
+  { en: "dongle", uz: "dongle", category: "IC3 Hardware" },
+  { en: "graphics tablet", uz: "grafik planshet", category: "IC3 Hardware" },
+  { en: "KVM switch", uz: "KVM kaliti", category: "IC3 Hardware" },
+  { en: "NVMe drive", uz: "NVMe disk", category: "IC3 Hardware" },
+  { en: "optical drive", uz: "optik disk yuritgich", category: "IC3 Hardware" },
+  { en: "power bank", uz: "quvvat banki", category: "IC3 Hardware" },
+  { en: "RAID", uz: "RAID (zaxiralash tizimi)", category: "IC3 Hardware" },
+  { en: "SATA", uz: "SATA", category: "IC3 Hardware" },
+
+  // ==================== DASTURIY TA'MINOT (10 ta) ====================
+  { en: "beta version", uz: "beta versiya", category: "IC3 Software" },
+  { en: "bloatware", uz: "keraksiz oldindan o‘rnatilgan dastur", category: "IC3 Software" },
+  { en: "cross-platform", uz: "platformalararo", category: "IC3 Software" },
+  { en: "debugging", uz: "xatoliklarni tuzatish", category: "IC3 Software" },
+  { en: "end-user license agreement", uz: "oxirgi foydalanuvchi litsenziya shartnomasi", category: "IC3 Software" },
+  { en: "EULA", uz: "EULA", category: "IC3 Software" },
+  { en: "legacy software", uz: "eski dastur", category: "IC3 Software" },
+  { en: "middleware", uz: "oraliq dastur", category: "IC3 Software" },
+  { en: "open beta", uz: "ochiq beta", category: "IC3 Software" },
+  { en: "sandbox", uz: "qum qutisi (xavfsiz muhit)", category: "IC3 Software" },
+
+  // ==================== TARMOQ (10 ta) ====================
+  { en: "fiber optic", uz: "optik tola", category: "IC3 Network" },
+  { en: "gateway", uz: "shlyuz", category: "IC3 Network" },
+  { en: "mesh network", uz: "to‘r tarmoq", category: "IC3 Network" },
+  { en: "network topology", uz: "tarmoq topologiyasi", category: "IC3 Network" },
+  { en: "node", uz: "tugun", category: "IC3 Network" },
+  { en: "packet loss", uz: "paket yo‘qolishi", category: "IC3 Network" },
+  { en: "port forwarding", uz: "port yo‘naltirish", category: "IC3 Network" },
+  { en: "SSID", uz: "tarmoq nomi", category: "IC3 Network" },
+  { en: "subnet mask", uz: "pastki tarmoq niqobi", category: "IC3 Network" },
+  { en: "throughput", uz: "o‘tkazuvchanlik", category: "IC3 Network" },
+
+  // ==================== HAMKORLIK (8 ta) ====================
+  { en: "asynchronous learning", uz: "asinxron o‘qish", category: "IC3 Collaboration" },
+  { en: "brainstorming", uz: "aql hujumi", category: "IC3 Collaboration" },
+  { en: "digital whiteboard", uz: "raqamli doska", category: "IC3 Collaboration" },
+  { en: "fork (repository)", uz: "fork (nusxalash)", category: "IC3 Collaboration" },
+  { en: "merge conflict", uz: "birlashtirish mojarosi", category: "IC3 Collaboration" },
+  { en: "remote access", uz: "masofaviy kirish", category: "IC3 Collaboration" },
+  { en: "screencast", uz: "ekran yozuvi", category: "IC3 Collaboration" },
+  { en: "virtual classroom", uz: "virtual sinf", category: "IC3 Collaboration" },
+
+  // ==================== QIDIRUV (7 ta) ====================
+  { en: "advanced search", uz: "kengaytirilgan qidiruv", category: "IC3 Research" },
+  { en: "auto-suggestion", uz: "avtomatik taklif", category: "IC3 Research" },
+  { en: "filter bubble", uz: "filtr qobig‘i", category: "IC3 Research" },
+  { en: "meta-search engine", uz: "meta-qidiruv tizimi", category: "IC3 Research" },
+  { en: "search algorithm", uz: "qidiruv algoritmi", category: "IC3 Research" },
+  { en: "search history", uz: "qidiruv tarixi", category: "IC3 Research" },
+  { en: "wildcard search", uz: "yulduzcha bilan qidiruv", category: "IC3 Research" },
+
+  // ==================== BRAUZER (7 ta) ====================
+  { en: "bookmark bar", uz: "xatcho‘plar paneli", category: "IC3 Internet" },
+  { en: "browser extension", uz: "brauzer kengaytmasi", category: "IC3 Internet" },
+  { en: "developer tools", uz: "ishlab chiquvchi vositalari", category: "IC3 Internet" },
+  { en: "incognito window", uz: "inkognito oynasi", category: "IC3 Internet" },
+  { en: "pop-up blocker", uz: "qalqib chiquvchi oynalarni bloklash", category: "IC3 Internet" },
+  { en: "tab browsing", uz: "tab bilan ko‘rish", category: "IC3 Internet" },
+  { en: "user agent", uz: "foydalanuvchi agenti", category: "IC3 Internet" },
+
+  // ==================== SALOMATLIK (5 ta) ====================
+  { en: "blue light filter", uz: "ko‘k nur filtri", category: "IC3 Health" },
+  { en: "digital detox", uz: "raqamli detoks", category: "IC3 Health" },
+  { en: "ergonomics", uz: "ergonomika", category: "IC3 Health" },
+  { en: "tech neck", uz: "texnologik bo‘yin", category: "IC3 Health" },
+  { en: "text neck", uz: "matn bo‘yni", category: "IC3 Health" },
+
+  // ==================== HISOBI & XARIDLAR (5 ta) ====================
+  { en: "contactless payment", uz: "kontaktsiz to‘lov", category: "IC3 General" },
+  { en: "cryptocurrency", uz: "kriptovalyuta", category: "IC3 General" },
+  { en: "digital currency", uz: "raqamli valyuta", category: "IC3 General" },
+  { en: "microtransaction", uz: "mikrotransaksiya", category: "IC3 General" },
+  { en: "QR code payment", uz: "QR kod bilan to‘lov", category: "IC3 General" },
+
+  // ==================== SUN'IY INTELLEKT (5 ta) ====================
+  { en: "chatbot", uz: "chatbot", category: "IC3 AI" },
+  { en: "computer vision", uz: "kompyuter ko‘rish", category: "IC3 AI" },
+  { en: "hallucination (AI)", uz: "AI gallyutsinatsiyasi", category: "IC3 AI" },
+  { en: "large language model", uz: "katta til modeli", category: "IC3 AI" },
+  { en: "LLM", uz: "LLM", category: "IC3 AI" },
+
+  // ==================== BOSHQALAR (3 ta) ====================
+  { en: "breadcrumb trail", uz: "navigatsiya izi", category: "IC3 General" },
+  { en: "digital divide", uz: "raqamli tafovut", category: "IC3 General" },
+  { en: "digital literacy", uz: "raqamli savodxonlik", category: "IC3 General" },
+
+
+  // ==================== YANGI 200 TA ATAMA ====================
+
+// ==================== XAVFSIZLIK (IC3 Security) +30 ====================
+{ en: "ransomware attack", uz: "to'lov talab qiluvchi hujum", category: "IC3 Security" },
+{ en: "security breach", uz: "xavfsizlik buzilishi", category: "IC3 Security" },
+{ en: "data encryption", uz: "ma'lumotlarni shifrlash", category: "IC3 Security" },
+{ en: "hash function", uz: "xesh funksiyasi", category: "IC3 Security" },
+{ en: "digital forensics", uz: "raqamli kriminalistika", category: "IC3 Security" },
+{ en: "intrusion detection system", uz: "hujumni aniqlash tizimi", category: "IC3 Security" },
+{ en: "intrusion prevention system", uz: "hujumni oldini olish tizimi", category: "IC3 Security" },
+{ en: "security audit", uz: "xavfsizlik auditi", category: "IC3 Security" },
+{ en: "penetration testing", uz: "penetratsion test", category: "IC3 Security" },
+{ en: "white hat hacker", uz: "oq shapkali haker", category: "IC3 Security" },
+{ en: "black hat hacker", uz: "qora shapkali haker", category: "IC3 Security" },
+{ en: "gray hat hacker", uz: "kulrang shapkali haker", category: "IC3 Security" },
+{ en: "social media privacy", uz: "ijtimoiy tarmoq maxfiyligi", category: "IC3 Security" },
+{ en: "data minimization", uz: "ma'lumotlarni minimallashtirish", category: "IC3 Security" },
+{ en: "privacy by design", uz: "dizayn bo'yicha maxfiylik", category: "IC3 Security" },
+{ en: "consent management", uz: "rozilik boshqaruvi", category: "IC3 Security" },
+{ en: "opt-in", uz: "rozilik berish", category: "IC3 Security" },
+{ en: "opt-out", uz: "rozilikni bekor qilish", category: "IC3 Security" },
+{ en: "data subject", uz: "ma'lumotlar subyekti", category: "IC3 Security" },
+{ en: "data controller", uz: "ma'lumotlar nazoratchisi", category: "IC3 Security" },
+{ en: "data processor", uz: "ma'lumotlar qayta ishlovchisi", category: "IC3 Security" },
+{ en: "security token", uz: "xavfsizlik tokeni", category: "IC3 Security" },
+{ en: "hardware token", uz: "apparat tokeni", category: "IC3 Security" },
+{ en: "software token", uz: "dasturiy token", category: "IC3 Security" },
+{ en: "biometric authentication", uz: "biometrik autentifikatsiya", category: "IC3 Security" },
+{ en: "fingerprint scanner", uz: "barmoq izi skaneri", category: "IC3 Security" },
+{ en: "facial recognition", uz: "yuzni tanish", category: "IC3 Security" },
+{ en: "iris recognition", uz: "ko'z qorachig'ini tanish", category: "IC3 Security" },
+{ en: "voice recognition", uz: "ovozni tanish", category: "IC3 Security" },
+{ en: "behavioral biometrics", uz: "xulq-atvor biometrikasi", category: "IC3 Security" },
+
+// ==================== APPARATURA (IC3 Hardware) +25 ====================
+{ en: "cache memory", uz: "kesh xotira", category: "IC3 Hardware" },
+{ en: "register", uz: "registr", category: "IC3 Hardware" },
+{ en: "clock speed", uz: "soat chastotasi", category: "IC3 Hardware" },
+{ en: "multi-core processor", uz: "ko'p yadroli protsessor", category: "IC3 Hardware" },
+{ en: "hyperthreading", uz: "giperthreading", category: "IC3 Hardware" },
+{ en: "thermal paste", uz: "termal pasta", category: "IC3 Hardware" },
+{ en: "heat sink", uz: "issiqlik sochgich", category: "IC3 Hardware" },
+{ en: "liquid cooling", uz: "suyuqlik sovutish", category: "IC3 Hardware" },
+{ en: "expansion slot", uz: "kengaytirish uyasi", category: "IC3 Hardware" },
+{ en: "PCIe slot", uz: "PCIe uyasi", category: "IC3 Hardware" },
+{ en: "M.2 drive", uz: "M.2 disk", category: "IC3 Hardware" },
+{ en: "eMMC storage", uz: "eMMC xotira", category: "IC3 Hardware" },
+{ en: "hybrid drive", uz: "gibrid disk", category: "IC3 Hardware" },
+{ en: "NAS", uz: "tarmoqqa ulangan xotira", category: "IC3 Hardware" },
+{ en: "SAN", uz: "xotira tarmog'i", category: "IC3 Hardware" },
+{ en: "blu-ray drive", uz: "blu-ray disk yuritgich", category: "IC3 Hardware" },
+{ en: "DVD drive", uz: "DVD disk yuritgich", category: "IC3 Hardware" },
+{ en: "CD drive", uz: "CD disk yuritgich", category: "IC3 Hardware" },
+{ en: "touchpad", uz: "sensorli panel", category: "IC3 Hardware" },
+{ en: "pointing stick", uz: "ko'rsatkich tayoqchasi", category: "IC3 Hardware" },
+{ en: "mechanical keyboard", uz: "mexanik klaviatura", category: "IC3 Hardware" },
+{ en: "membrane keyboard", uz: "membranali klaviatura", category: "IC3 Hardware" },
+{ en: "gaming mouse", uz: "o'yin sichqonchasi", category: "IC3 Hardware" },
+{ en: "3D printer", uz: "3D printer", category: "IC3 Hardware" },
+{ en: "plotter", uz: "plotter", category: "IC3 Hardware" },
+
+// ==================== OPERATSION TIZIM (IC3 OS) +20 ====================
+{ en: "device driver", uz: "qurilma drayveri", category: "IC3 OS" },
+{ en: "plug and play", uz: "uloq va o'yna", category: "IC3 OS" },
+{ en: "system restore", uz: "tizimni tiklash", category: "IC3 OS" },
+{ en: "safe mode", uz: "xavfsiz rejim", category: "IC3 OS" },
+{ en: "task scheduler", uz: "vazifa rejalashtiruvchi", category: "IC3 OS" },
+{ en: "event viewer", uz: "hodisalar ko'ruvchisi", category: "IC3 OS" },
+{ en: "performance monitor", uz: "ishlash monitori", category: "IC3 OS" },
+{ en: "resource monitor", uz: "resurslar monitori", category: "IC3 OS" },
+{ en: "disk management", uz: "disk boshqaruvi", category: "IC3 OS" },
+{ en: "device manager", uz: "qurilmalar boshqaruvi", category: "IC3 OS" },
+{ en: "group policy", uz: "guruh siyosati", category: "IC3 OS" },
+{ en: "local security policy", uz: "mahalliy xavfsizlik siyosati", category: "IC3 OS" },
+{ en: "firewall settings", uz: "xavfsizlik devori sozlamalari", category: "IC3 OS" },
+{ en: "windows update", uz: "Windows yangilanishi", category: "IC3 OS" },
+{ en: "system information", uz: "tizim ma'lumotlari", category: "IC3 OS" },
+{ en: "control panel", uz: "boshqaruv paneli", category: "IC3 OS" },
+{ en: "settings app", uz: "sozlamalar ilovasi", category: "IC3 OS" },
+{ en: "notification area", uz: "bildirishnoma hududi", category: "IC3 OS" },
+{ en: "system tray", uz: "tizim treyi", category: "IC3 OS" },
+{ en: "desktop background", uz: "ish stoli fon rasmi", category: "IC3 OS" },
+
+// ==================== TARMOQ (IC3 Network) +20 ====================
+{ en: "network switch", uz: "tarmoq kaliti", category: "IC3 Network" },
+{ en: "network hub", uz: "tarmoq hubi", category: "IC3 Network" },
+{ en: "network bridge", uz: "tarmoq ko'prigi", category: "IC3 Network" },
+{ en: "network repeater", uz: "tarmoq takrorlagichi", category: "IC3 Network" },
+{ en: "access point", uz: "kirish nuqtasi", category: "IC3 Network" },
+{ en: "firewall", uz: "xavfsizlik devori", category: "IC3 Network" },
+{ en: "proxy", uz: "proksi", category: "IC3 Network" },
+{ en: "load balancer", uz: "yuk muvozanatlagichi", category: "IC3 Network" },
+{ en: "network interface", uz: "tarmoq interfeysi", category: "IC3 Network" },
+{ en: "network adapter", uz: "tarmoq adapteri", category: "IC3 Network" },
+{ en: "wireless adapter", uz: "simsiz adapter", category: "IC3 Network" },
+{ en: "network cable", uz: "tarmoq kabeli", category: "IC3 Network" },
+{ en: "coaxial cable", uz: "koaksial kabel", category: "IC3 Network" },
+{ en: "twisted pair cable", uz: "o'ralgan juft kabel", category: "IC3 Network" },
+{ en: "fiber optic cable", uz: "optik tolali kabel", category: "IC3 Network" },
+{ en: "RJ45 connector", uz: "RJ45 ulagich", category: "IC3 Network" },
+{ en: "network port", uz: "tarmoq porti", category: "IC3 Network" },
+{ en: "MAC filtering", uz: "MAC filtrlash", category: "IC3 Network" },
+{ en: "IP filtering", uz: "IP filtrlash", category: "IC3 Network" },
+{ en: "port blocking", uz: "portni bloklash", category: "IC3 Network" },
+
+// ==================== INTERNET (IC3 Internet) +20 ====================
+{ en: "responsive web design", uz: "moslashuvchan veb-dizayn", category: "IC3 Internet" },
+{ en: "mobile-friendly", uz: "mobil qurilmalarga mos", category: "IC3 Internet" },
+{ en: "web accessibility", uz: "veb qulayligi", category: "IC3 Internet" },
+{ en: "SEO", uz: "qidiruv tizimini optimallashtirish", category: "IC3 Internet" },
+{ en: "web analytics", uz: "veb-analitika", category: "IC3 Internet" },
+{ en: "click-through rate", uz: "bosish darajasi", category: "IC3 Internet" },
+{ en: "bounce rate", uz: "qaytish darajasi", category: "IC3 Internet" },
+{ en: "conversion rate", uz: "konversiya darajasi", category: "IC3 Internet" },
+{ en: "landing page", uz: "ochilish sahifasi", category: "IC3 Internet" },
+{ en: "homepage", uz: "bosh sahifa", category: "IC3 Internet" },
+{ en: "webpage", uz: "veb-sahifa", category: "IC3 Internet" },
+{ en: "website navigation", uz: "veb-sayt navigatsiyasi", category: "IC3 Internet" },
+{ en: "sitemap", uz: "sayt xaritasi", category: "IC3 Internet" },
+{ en: "breadcrumb navigation", uz: "breadcrumb navigatsiyasi", category: "IC3 Internet" },
+{ en: "footer", uz: "pastki qism", category: "IC3 Internet" },
+{ en: "sidebar", uz: "yon panel", category: "IC3 Internet" },
+{ en: "hero image", uz: "bosh rasm", category: "IC3 Internet" },
+{ en: "call to action", uz: "harakatga chaqiruv", category: "IC3 Internet" },
+{ en: "web form", uz: "veb-forma", category: "IC3 Internet" },
+{ en: "captcha", uz: "CAPTCHA (robot emasligini tekshirish)", category: "IC3 Internet" },
+
+// ==================== DASTURIY TA'MINOT (IC3 Software) +20 ====================
+{ en: "software license", uz: "dasturiy litsenziya", category: "IC3 Software" },
+{ en: "perpetual license", uz: "cheksiz litsenziya", category: "IC3 Software" },
+{ en: "subscription license", uz: "obuna litsenziyasi", category: "IC3 Software" },
+{ en: "trial version", uz: "sinov versiyasi", category: "IC3 Software" },
+{ en: "freemium", uz: "freemium (bepul asosiy, pullik qo'shimcha)", category: "IC3 Software" },
+{ en: "software update", uz: "dasturiy yangilanish", category: "IC3 Software" },
+{ en: "software upgrade", uz: "dasturiy yangilanish (katta versiya)", category: "IC3 Software" },
+{ en: "hotfix", uz: "tezkor tuzatish", category: "IC3 Software" },
+{ en: "service pack", uz: "xizmatlar to'plami", category: "IC3 Software" },
+{ en: "software repository", uz: "dasturiy ombor", category: "IC3 Software" },
+{ en: "package manager", uz: "paket boshqaruvchisi", category: "IC3 Software" },
+{ en: "dependency", uz: "bog'liqlik", category: "IC3 Software" },
+{ en: "software architecture", uz: "dasturiy arxitektura", category: "IC3 Software" },
+{ en: "frontend", uz: "old qism", category: "IC3 Software" },
+{ en: "backend", uz: "orqa qism", category: "IC3 Software" },
+{ en: "full-stack", uz: "to'liq stack", category: "IC3 Software" },
+{ en: "API", uz: "dasturiy interfeys", category: "IC3 Software" },
+{ en: "SDK", uz: "dasturiy ishlab chiqish to'plami", category: "IC3 Software" },
+{ en: "framework", uz: "freymvork", category: "IC3 Software" },
+{ en: "library", uz: "kutubxona", category: "IC3 Software" },
+
+// ==================== MULOQOT (IC3 Communication) +15 ====================
+{ en: "instant message", uz: "tezkor xabar", category: "IC3 Communication" },
+{ en: "direct message", uz: "to'g'ridan-to'g'ri xabar", category: "IC3 Communication" },
+{ en: "group chat", uz: "guruh suhbati", category: "IC3 Communication" },
+{ en: "channel", uz: "kanal", category: "IC3 Communication" },
+{ en: "thread", uz: "mavzu", category: "IC3 Communication" },
+{ en: "mention", uz: "eslatish", category: "IC3 Communication" },
+{ en: "hashtag", uz: "hashteg", category: "IC3 Communication" },
+{ en: "tagging", uz: "teglash", category: "IC3 Communication" },
+{ en: "reaction", uz: "reaksiya", category: "IC3 Communication" },
+{ en: "poll", uz: "so'rovnoma", category: "IC3 Communication" },
+{ en: "voice message", uz: "ovozli xabar", category: "IC3 Communication" },
+{ en: "video message", uz: "video xabar", category: "IC3 Communication" },
+{ en: "screen sharing", uz: "ekran almashish", category: "IC3 Communication" },
+{ en: "file sharing", uz: "fayl almashish", category: "IC3 Communication" },
+{ en: "link sharing", uz: "havola almashish", category: "IC3 Communication" },
+
+// ==================== HAMKORLIK (IC3 Collaboration) +10 ====================
+{ en: "project management", uz: "loyiha boshqaruvi", category: "IC3 Collaboration" },
+{ en: "task assignment", uz: "vazifa tayinlash", category: "IC3 Collaboration" },
+{ en: "deadline", uz: "muddat", category: "IC3 Collaboration" },
+{ en: "milestone", uz: "muhim bosqich", category: "IC3 Collaboration" },
+{ en: "kanban board", uz: "kanban doskasi", category: "IC3 Collaboration" },
+{ en: "scrum", uz: "scrum", category: "IC3 Collaboration" },
+{ en: "agile methodology", uz: "agile metodologiyasi", category: "IC3 Collaboration" },
+{ en: "waterfall model", uz: "sharshara modeli", category: "IC3 Collaboration" },
+{ en: "sprint", uz: "sprint", category: "IC3 Collaboration" },
+{ en: "retrospective", uz: "retrospektiv", category: "IC3 Collaboration" },
+
+// ==================== HUQUQIY MASALALAR (IC3 Legal) +10 ====================
+{ en: "trademark", uz: "tovar belgisi", category: "IC3 Legal" },
+{ en: "patent", uz: "patent", category: "IC3 Legal" },
+{ en: "intellectual property", uz: "intellektual mulk", category: "IC3 Legal" },
+{ en: "trade secret", uz: "savdo siri", category: "IC3 Legal" },
+{ en: "non-disclosure agreement", uz: "oshkor qilmaslik shartnomasi", category: "IC3 Legal" },
+{ en: "end user license agreement", uz: "oxirgi foydalanuvchi litsenziya shartnomasi", category: "IC3 Legal" },
+{ en: "terms of service", uz: "xizmat ko'rsatish shartlari", category: "IC3 Legal" },
+{ en: "privacy policy", uz: "maxfiylik siyosati", category: "IC3 Legal" },
+{ en: "cookie policy", uz: "kuki siyosati", category: "IC3 Legal" },
+{ en: "GDPR", uz: "GDPR (Yevropa ma'lumotlar himoyasi qonuni)", category: "IC3 Legal" },
+
+// ==================== TADQIQOT (IC3 Research) +10 ====================
+{ en: "primary source", uz: "birlamchi manba", category: "IC3 Research" },
+{ en: "secondary source", uz: "ikkilamchi manba", category: "IC3 Research" },
+{ en: "peer-reviewed journal", uz: "tengdosh tekshiruvli jurnal", category: "IC3 Research" },
+{ en: "scholarly article", uz: "ilmiy maqola", category: "IC3 Research" },
+{ en: "empirical study", uz: "empirik tadqiqot", category: "IC3 Research" },
+{ en: "literature review", uz: "adabiyotlar tahlili", category: "IC3 Research" },
+{ en: "research methodology", uz: "tadqiqot metodologiyasi", category: "IC3 Research" },
+{ en: "qualitative research", uz: "sifatli tadqiqot", category: "IC3 Research" },
+{ en: "quantitative research", uz: "miqdoriy tadqiqot", category: "IC3 Research" },
+{ en: "data triangulation", uz: "ma'lumotlar triangulyatsiyasi", category: "IC3 Research" },
+
+// ==================== SALOMATLIK (IC3 Health) +10 ====================
+{ en: "digital addiction", uz: "raqamli giyohvandlik", category: "IC3 Health" },
+{ en: "internet addiction", uz: "internet giyohvandligi", category: "IC3 Health" },
+{ en: "social media addiction", uz: "ijtimoiy tarmoq giyohvandligi", category: "IC3 Health" },
+{ en: "gaming disorder", uz: "o'yin buzilishi", category: "IC3 Health" },
+{ en: "nomophobia", uz: "nomofobiya (telefonsiz qolish qo'rquvi)", category: "IC3 Health" },
+{ en: "cybersickness", uz: "kiber kasallik", category: "IC3 Health" },
+{ en: "zoom fatigue", uz: "zoom charchoqi", category: "IC3 Health" },
+{ en: "dry eyes", uz: "quruq ko'zlar", category: "IC3 Health" },
+{ en: "computer vision syndrome", uz: "kompyuter ko'rish sindromi", category: "IC3 Health" },
+{ en: "texting thumb", uz: "matn yozish barmog'i", category: "IC3 Health" },
+
+// ==================== BULUT (IC3 Cloud) +10 ====================
+{ en: "IaaS", uz: "infratuzilma sifatida xizmat", category: "IC3 Cloud" },
+{ en: "PaaS", uz: "platforma sifatida xizmat", category: "IC3 Cloud" },
+{ en: "SaaS", uz: "dastur sifatida xizmat", category: "IC3 Cloud" },
+{ en: "public cloud", uz: "ommaviy bulut", category: "IC3 Cloud" },
+{ en: "private cloud", uz: "xususiy bulut", category: "IC3 Cloud" },
+{ en: "hybrid cloud", uz: "gibrid bulut", category: "IC3 Cloud" },
+{ en: "multi-cloud", uz: "ko'p bulutli", category: "IC3 Cloud" },
+{ en: "cloud migration", uz: "bulutga ko'chish", category: "IC3 Cloud" },
+{ en: "cloud backup", uz: "bulutli zaxira", category: "IC3 Cloud" },
+{ en: "cloud disaster recovery", uz: "bulutli falokatdan tiklash", category: "IC3 Cloud" },
+
+// ==================== SUN'IY INTELLEKT (IC3 AI) +10 ====================
+{ en: "supervised learning", uz: "nazorat ostida o'rganish", category: "IC3 AI" },
+{ en: "unsupervised learning", uz: "nazoratsiz o'rganish", category: "IC3 AI" },
+{ en: "reinforcement learning", uz: "mustahkamlovchi o'rganish", category: "IC3 AI" },
+{ en: "training data", uz: "o'rgatuvchi ma'lumotlar", category: "IC3 AI" },
+{ en: "test data", uz: "test ma'lumotlari", category: "IC3 AI" },
+{ en: "validation data", uz: "tekshiruv ma'lumotlari", category: "IC3 AI" },
+{ en: "overfitting", uz: "ortiqcha moslashish", category: "IC3 AI" },
+{ en: "underfitting", uz: "yetarlicha moslashmaslik", category: "IC3 AI" },
+{ en: "model accuracy", uz: "model aniqligi", category: "IC3 AI" },
+{ en: "precision and recall", uz: "aniqlik va esga olish", category: "IC3 AI" },
+
+// ==================== UMUMIY (IC3 General) +10 ====================
+{ en: "digital transformation", uz: "raqamli transformatsiya", category: "IC3 General" },
+{ en: "digital ecosystem", uz: "raqamli ekotizim", category: "IC3 General" },
+{ en: "digital native", uz: "raqamli mahalliy", category: "IC3 General" },
+{ en: "digital immigrant", uz: "raqamli immigrant", category: "IC3 General" },
+{ en: "digital citizen", uz: "raqamli fuqaro", category: "IC3 General" },
+{ en: "digital rights", uz: "raqamli huquqlar", category: "IC3 General" },
+{ en: "digital responsibility", uz: "raqamli mas'uliyat", category: "IC3 General" },
+{ en: "digital wellness", uz: "raqamli farovonlik", category: "IC3 General" },
+{ en: "digital inclusion", uz: "raqamli inklyuziya", category: "IC3 General" },
+{ en: "digital equity", uz: "raqamli tenglik", category: "IC3 General" },
+
+
 ];
 
-// -------------------- KATEGORIYALARNI YANGILASH --------------------
+// -------------------- FULL GLOSSARY (SIZ O'ZINGIZ YOZASIZ) --------------------
+// const fullGlossary = [ ... ]; // Siz shu yerga o'z atamalaringizni yozasiz
+
+// -------------------- KATEGORIYALAR --------------------
+// -------------------- KATEGORIYALAR (fullGlossary ga moslashtirilgan) --------------------
 const categories = [
-  { id: "Hardware", name: "Apparat ta'minoti", icon: "💻" },
-  { id: "Software", name: "Dasturiy ta'minot", icon: "🖥️" },
-  { id: "Network", name: "Tarmoq", icon: "🌐" },
-  { id: "Security", name: "Xavfsizlik", icon: "🔒" },
-  { id: "OS", name: "Operatsion tizim", icon: "⚙️" },
-  { id: "Internet", name: "Internet", icon: "🌍" },
-  { id: "Printing", name: "Chop etish", icon: "🖨️" },
-  { id: "Communication", name: "Muloqot", icon: "💬" },
-  { id: "Health", name: "Salomatlik", icon: "❤️" },
-  { id: "Kurs", name: "IC3 GS6 kursi", icon: "📒" },
+  { id: "IC3 Hardware", name: "Apparat ta'minoti", icon: "💻", description: "Kompyuterning fizik qismlari" },
+  { id: "IC3 Software", name: "Dasturiy ta'minot", icon: "🖥️", description: "Kompyuter dasturlari va ilovalar" },
+  { id: "IC3 Network", name: "Tarmoq", icon: "🌐", description: "Internet va tarmoq texnologiyalari" },
+  { id: "IC3 Security", name: "Xavfsizlik", icon: "🔒", description: "Ma'lumotlar va shaxsiy xavfsizlik" },
+  { id: "IC3 OS", name: "Operatsion tizim", icon: "⚙️", description: "Windows, macOS, Linux va boshqalar" },
+  { id: "IC3 Internet", name: "Internet va web", icon: "🌍", description: "Veb-saytlar, brauzerlar, onlayn xizmatlar" },
+  { id: "IC3 Printing", name: "Chop etish", icon: "🖨️", description: "Printerlar va hujjatlarni bosish" },
+  { id: "IC3 Communication", name: "Muloqot", icon: "💬", description: "Email, chat, video qo‘ng‘iroqlar" },
+  { id: "IC3 Health", name: "Salomatlik", icon: "❤️", description: "Kompyuterdan foydalanish bilan bog‘liq sog‘liq" },
+  { id: "IC3 Collaboration", name: "Hamkorlik", icon: "🤝", description: "Birgalikda ishlash vositalari" },
+  { id: "IC3 Legal", name: "Huquqiy masalalar", icon: "⚖️", description: "Mualliflik huquqi, Creative Commons, iqtibos" },
+  { id: "IC3 Research", name: "Tadqiqot", icon: "🔍", description: "Qidiruv, manbalar, ishonchlilik" },
+  { id: "IC3 Cloud", name: "Bulutli texnologiyalar", icon: "☁️", description: "Bulutli saqlash va xizmatlar" },
+  { id: "IC3 AI", name: "Sun'iy intellekt", icon: "🤖", description: "AI, machine learning, chatbot" },
+  { id: "IC3 General", name: "Umumiy tushunchalar", icon: "📚", description: "Boshqa barcha mavzular" },
 ];
-
-// Har bir kategoriyadagi atamalar sonini hisoblash
-categories.forEach((cat) => {
-  cat.count = fullGlossary.filter((t) => t.category === cat.id).length;
-});
-
-// console.log('Jami atamalar:', fullGlossary.length);
-// console.log('Kategoriyalar:', categories.map(c => `${c.name}: ${c.count} ta`));
 
 // -------------------- GLOBAL O'ZGARUVCHILAR --------------------
 let currentUser = null;
@@ -758,25 +756,14 @@ let blockTimer = null;
 
 // -------------------- DOM ELEMENTLAR --------------------
 let loginSection, mainSection, testSection, resultsModal, blockModal;
-let loginBtn, username, password, loginError, logoutBtn, loggedUser;
+let loginBtn, username, password, fish, loginError, logoutBtn, loggedUser;
 let backBtn, resetTestBtn, showResultsBtn, prevBtn, nextBtn;
 let closeResultsBtn, retryBtn, homeBtn;
 let categoryContainer, testCategoryTitle, testProgress;
 let currentQuestionType, currentQuestionNumber, questionText, optionsContainer;
-let totalQuestions,
-  answeredQuestions,
-  remainingQuestions,
-  correctAnswers,
-  wrongAnswers,
-  percentageScore;
+let totalQuestions, answeredQuestions, remainingQuestions, correctAnswers, wrongAnswers, percentageScore;
 let questionNavButtons;
-let resultPercentage,
-  resultTotal,
-  resultCorrect,
-  resultWrong,
-  resultUnanswered,
-  resultGrade,
-  resultMessage;
+let resultPercentage, resultTotal, resultCorrect, resultWrong, resultUnanswered, resultGrade, resultMessage;
 let completedTestsSpan, avgScoreSpan;
 
 // -------------------- INITIALIZATION --------------------
@@ -844,14 +831,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Event listeners
   loginBtn.addEventListener("click", handleLogin);
-  username.addEventListener(
-    "keypress",
-    (e) => e.key === "Enter" && handleLogin(),
-  );
-  password.addEventListener(
-    "keypress",
-    (e) => e.key === "Enter" && handleLogin(),
-  );
+  username.addEventListener("keypress", (e) => e.key === "Enter" && handleLogin());
+  password.addEventListener("keypress", (e) => e.key === "Enter" && handleLogin());
 
   logoutBtn.addEventListener("click", handleLogout);
   backBtn.addEventListener("click", handleBack);
@@ -860,10 +841,7 @@ document.addEventListener("DOMContentLoaded", function () {
   prevBtn.addEventListener("click", () => navigateQuestion(-1));
   nextBtn.addEventListener("click", () => navigateQuestion(1));
 
-  closeResultsBtn.addEventListener(
-    "click",
-    () => (resultsModal.style.display = "none"),
-  );
+  closeResultsBtn.addEventListener("click", () => (resultsModal.style.display = "none"));
   retryBtn.addEventListener("click", handleRetry);
   homeBtn.addEventListener("click", handleHome);
 
@@ -872,18 +850,26 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target === blockModal) blockModal.style.display = "none";
   });
 
-  // Update stats
-  updateDashboard();
+  // Kategoriyalardagi atamalar sonini hisoblash (fullGlossary mavjud bo'lganda ishlaydi)
+  if (typeof fullGlossary !== 'undefined' && fullGlossary.length > 0) {
+    categories.forEach((cat) => {
+      cat.count = fullGlossary.filter((t) => t.category === cat.id).length;
+    });
+    updateDashboard();
+    renderCategories();
+  } else {
+    console.log("Iltimos, fullGlossary ni to'ldiring!");
+  }
 });
 
 // -------------------- LOGIN HANDLER --------------------
 function handleLogin() {
   const user = username.value.trim();
   const pass = password.value.trim();
-  const fi = fish.value.trim();
+  const fi = fish ? fish.value.trim() : "";
 
-  if (!user || !pass || !fi) {
-    loginError.textContent = "Ma'lumotlarni to'lliq kiriting!";
+  if (!user || !pass) {
+    loginError.textContent = "Ma'lumotlarni to'liq kiriting!";
     return;
   }
 
@@ -893,11 +879,8 @@ function handleLogin() {
     return;
   }
 
-  // Bu yerda siz o'zingizning login/parol tekshirish logikangizni yozasiz
-  // Masalan, ma'lum bir login va parolni tekshirish:
-
-  const VALID_USERNAME = "demo";
-  const VALID_PASSWORD = "demo123";
+  const VALID_USERNAME = "IC3GS6";
+  const VALID_PASSWORD = "lugat600";
 
   if (user === VALID_USERNAME && pass === VALID_PASSWORD) {
     currentUser = user;
@@ -927,6 +910,7 @@ function handleLogout() {
   loginSection.style.display = "flex";
   username.value = "";
   password.value = "";
+  if (fish) fish.value = "";
 }
 
 // -------------------- BACK HANDLER --------------------
@@ -964,13 +948,13 @@ function showBlockModal(seconds) {
   const timer = document.getElementById("blockTimer");
 
   let remaining = seconds;
-  timer.textContent = remaining;
+  if (timer) timer.textContent = remaining;
 
   if (blockTimer) clearInterval(blockTimer);
 
   blockTimer = setInterval(() => {
     remaining--;
-    timer.textContent = remaining;
+    if (timer) timer.textContent = remaining;
 
     if (remaining <= 0) {
       clearInterval(blockTimer);
@@ -981,91 +965,83 @@ function showBlockModal(seconds) {
 
 // -------------------- DASHBOARD --------------------
 function updateDashboard() {
-  document.getElementById("totalTerms").textContent = fullGlossary.length;
-  document.getElementById("totalCategories").textContent = categories.length;
-  completedTestsSpan.textContent = completedTests;
+  const totalTermsEl = document.getElementById("totalTerms");
+  const totalCategoriesEl = document.getElementById("totalCategories");
+  
+  if (totalTermsEl && typeof fullGlossary !== 'undefined') {
+    totalTermsEl.textContent = fullGlossary.length;
+  }
+  if (totalCategoriesEl) totalCategoriesEl.textContent = categories.length;
+  if (completedTestsSpan) completedTestsSpan.textContent = completedTests;
 
   const avg = completedTests > 0 ? Math.round(totalScore / completedTests) : 0;
-  avgScoreSpan.textContent = avg + "%";
+  if (avgScoreSpan) avgScoreSpan.textContent = avg + "%";
 }
 
 // -------------------- KATEGORIYALARNI CHIZISH --------------------
 function renderCategories() {
+  if (!categoryContainer) return;
   categoryContainer.innerHTML = "";
 
   categories.forEach((cat) => {
-    if (cat.id != "Kurs") {
-      const card = document.createElement("div");
-      card.className = "category-card";
-      card.innerHTML = `
-            <div class="category-icon">${cat.icon}</div>
-            <span class="category-name">${cat.name}</span>
-            <span class="category-count">${cat.count} ta atama</span>
-        `;
+    const card = document.createElement("div");
+    card.className = "category-card";
+    
+    const count = (typeof fullGlossary !== 'undefined') ? (fullGlossary.filter((t) => t.category === cat.id).length || 0) : 0;
+    
+    card.innerHTML = `
+      <div class="category-icon">${cat.icon}</div>
+      <span class="category-name">${cat.name}</span>
+      <span class="category-count">${count} ta atama</span>
+    `;
 
-      card.addEventListener("click", () => loadCategoryTest(cat.id));
-      categoryContainer.appendChild(card);
-    } else {
-      const card = document.createElement("div");
-      card.className = "category-card1";
-      card.innerHTML = `
-            <div class="category-icon">${cat.icon}</div>
-            <span class="category-name">${cat.name}</span>
-            <a href="https://t.me/Informatika_ic3_ser" class="tg_link">
-              <button class="tg_kanal">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-telegram"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
-                  />
-                </svg>
-                Digital Ustoz | Informatika
-              </button></a
-            >
-        `;
-
-      card.addEventListener("click", () => loadCategoryTest(cat.id));
-      categoryContainer.appendChild(card);
-    }
+    card.addEventListener("click", () => loadCategoryTest(cat.id));
+    categoryContainer.appendChild(card);
   });
 }
 
 // -------------------- TESTNI YUKLASH --------------------
 function loadCategoryTest(categoryId) {
-  if (categoryId != "Kurs") {
-    currentCategory = categories.find((c) => c.id === categoryId);
-
-    // Kategoriyadagi atamalarni olish
-    const categoryTerms = fullGlossary.filter((t) => t.category === categoryId);
-
-    // 10----------------- ta savol generatsiya qilish
-    currentQuestions = generateQuestions(categoryTerms, categoryTerms.length);
-
-    currentIndex = 0;
-    userAnswers = new Array(60).fill(null);
-    score = 0;
-
-    mainSection.style.display = "none";
-    testSection.style.display = "block";
-    testCategoryTitle.innerHTML = `${currentCategory.icon} ${currentCategory.name}`;
-
-    renderQuestion();
+  if (typeof fullGlossary === 'undefined') {
+    alert("Iltimos, avval fullGlossary ni to'ldiring!");
+    return;
   }
+  
+  currentCategory = categories.find((c) => c.id === categoryId);
+  if (!currentCategory) return;
+
+  const categoryTerms = fullGlossary.filter((t) => t.category === categoryId);
+  
+  if (categoryTerms.length === 0) {
+    alert("Bu kategoriyada hali atamalar mavjud emas!");
+    return;
+  }
+
+  // 10 ta savol generatsiya qilish (ko'pi bilan 20)
+  // const questionCount = Math.min(categoryTerms.length, 10);
+  const questionCount = categoryTerms.length;  // 70 ta atama bo'lsa 70 ta savol
+  currentQuestions = generateQuestions(categoryTerms, questionCount);
+
+  currentIndex = 0;
+  userAnswers = new Array(currentQuestions.length).fill(null);
+  score = 0;
+
+  mainSection.style.display = "none";
+  testSection.style.display = "block";
+  testCategoryTitle.innerHTML = `${currentCategory.icon} ${currentCategory.name}`;
+
+  renderQuestion();
 }
 
 // -------------------- SAVOLLARNI GENERATSIYA QILISH --------------------
 function generateQuestions(terms, count) {
   const questions = [];
   const shuffled = [...terms].sort(() => Math.random() - 0.5);
+  
+  const questionCount = Math.min(count, shuffled.length);
 
-  for (let i = 0; i < count; i++) {
-    const term = shuffled[i % shuffled.length];
+  for (let i = 0; i < questionCount; i++) {
+    const term = shuffled[i];
 
     if (testFormat === "mixed") {
       if (i % 2 === 0) {
@@ -1089,6 +1065,7 @@ function createEn2UzQuestion(term, allTerms) {
   const others = allTerms
     .filter((t) => t.uz !== correct)
     .map((t) => t.uz)
+    .filter((v, i, a) => a.indexOf(v) === i) // unique qilish
     .sort(() => Math.random() - 0.5)
     .slice(0, 3);
 
@@ -1110,6 +1087,7 @@ function createUz2EnQuestion(term, allTerms) {
   const others = allTerms
     .filter((t) => t.en !== correct)
     .map((t) => t.en)
+    .filter((v, i, a) => a.indexOf(v) === i) // unique qilish
     .sort(() => Math.random() - 0.5)
     .slice(0, 3);
 
@@ -1127,34 +1105,30 @@ function createUz2EnQuestion(term, allTerms) {
 
 // -------------------- SAVOLNI KO'RSATISH --------------------
 function renderQuestion() {
+  if (!currentQuestions.length) return;
+  
   const q = currentQuestions[currentIndex];
   const selected = userAnswers[currentIndex];
 
-  // Savol turi
-  currentQuestionType.innerHTML =
-    q.type === "en2uz"
-      ? "🇬🇧 Inglizcha → 🇺🇿 O'zbekcha"
-      : "🇺🇿 O'zbekcha → 🇬🇧 Inglizcha";
+  currentQuestionType.innerHTML = q.type === "en2uz"
+    ? "🇬🇧 Inglizcha → 🇺🇿 O'zbekcha"
+    : "🇺🇿 O'zbekcha → 🇬🇧 Inglizcha";
 
-  // Savol raqami
   currentQuestionNumber.innerHTML = `Savol ${currentIndex + 1} / ${currentQuestions.length}`;
   testProgress.innerHTML = `${currentIndex + 1} / ${currentQuestions.length}`;
-
-  // Savol matni
   questionText.innerHTML = q.question;
 
-  // Variantlar
   optionsContainer.innerHTML = "";
 
   q.options.forEach((opt, idx) => {
     const letter = String.fromCharCode(65 + idx);
     const optionDiv = document.createElement("div");
-    optionDiv.className = `option-item ${selected === opt ? "selected" : ""} ${selected ? "disabled" : ""}`;
-
+    optionDiv.className = `option-item ${selected === opt ? "selected" : ""}`;
+    
     if (selected) {
+      optionDiv.classList.add("disabled");
       if (opt === q.correct) optionDiv.classList.add("correct");
-      if (selected === opt && opt !== q.correct)
-        optionDiv.classList.add("wrong");
+      if (selected === opt && opt !== q.correct) optionDiv.classList.add("wrong");
     }
 
     optionDiv.innerHTML = `<span class="option-prefix">${letter}</span><span>${opt}</span>`;
@@ -1166,14 +1140,11 @@ function renderQuestion() {
     optionsContainer.appendChild(optionDiv);
   });
 
-  // Navigatsiya tugmalari
   prevBtn.disabled = currentIndex === 0;
   nextBtn.disabled = currentIndex === currentQuestions.length - 1;
 
-  // Natijalar tugmasi
   const answered = userAnswers.filter((a) => a !== null).length;
-  showResultsBtn.style.display =
-    answered === currentQuestions.length ? "block" : "none";
+  showResultsBtn.style.display = answered === currentQuestions.length ? "block" : "none";
 
   updateStats();
   renderQuestionNav();
@@ -1208,6 +1179,7 @@ function updateStats() {
 
 // -------------------- SAVOLLAR NAVIGATSIYASI --------------------
 function renderQuestionNav() {
+  if (!questionNavButtons) return;
   questionNavButtons.innerHTML = "";
 
   for (let i = 0; i < currentQuestions.length; i++) {
@@ -1257,7 +1229,6 @@ function showResults() {
     resultMessage.innerHTML = "Natija past. Atamalarni qayta o'rganib chiqing.";
   }
 
-  // Statistikani yangilash
   completedTests++;
   totalScore += percent;
   updateDashboard();
@@ -1270,9 +1241,10 @@ function resetCurrentQuiz() {
   if (!currentCategory) return;
 
   const terms = fullGlossary.filter((t) => t.category === currentCategory.id);
-  currentQuestions = generateQuestions(terms, terms.length);
+  const questionCount = Math.min(terms.length, 10);
+  currentQuestions = generateQuestions(terms, questionCount);
   currentIndex = 0;
-  userAnswers = new Array(10).fill(null);
+  userAnswers = new Array(currentQuestions.length).fill(null);
   score = 0;
 
   renderQuestion();
